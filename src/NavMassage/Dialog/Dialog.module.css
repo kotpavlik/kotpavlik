@@ -1,0 +1,19 @@
+.dialog {
+    grid-area: d;
+}
+
+.dialog a {
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    color: rgb(0, 201, 236);
+}
+
+.dialog a.active {
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: rgb(9, 141, 194);
+}

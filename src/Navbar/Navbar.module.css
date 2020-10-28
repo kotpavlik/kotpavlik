@@ -1,0 +1,43 @@
+.nav {
+    grid-area: n;
+    background-color: royalblue;
+    display: grid;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.445);
+    grid-template-rows: 50px 50px 50px 50px 10fr;
+}
+
+.item a {
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: honeydew;
+}
+
+.item a.active {
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    color: rgb(47, 231, 255);
+}
+
+.itemfr {
+    padding-top: 50px;
+}
+
+.itemfr a {
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: honeydew;
+}
+
+.itemfr a.active {
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    color: rgb(47, 231, 255);
+}

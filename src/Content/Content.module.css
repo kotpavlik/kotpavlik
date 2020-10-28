@@ -1,0 +1,17 @@
+.text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+}
+
+.but {
+    padding-left: 465px;
+}
+
+.textarea {
+    resize: none;
+    overflow: hidden;
+    outline: none;
+    height: 50px;
+    width: 500px;
+}

@@ -1,0 +1,11 @@
+.text {
+    grid-area: t;
+}
+
+.textarea {
+    resize: none;
+    overflow: hidden;
+    outline: none;
+    height: 50px;
+    width: 500px;
+}
