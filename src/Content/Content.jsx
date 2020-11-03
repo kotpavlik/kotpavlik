@@ -26,7 +26,7 @@ props.updateNewPostText(text);
         <div>
           <textarea
             onChange={onPostChange}
-            placeholder="Please,wright"
+            placeholder="Please,write"
             className={s.textarea}
             ref={newPostElement}
             value={props.state.newPostText} />

@@ -15,7 +15,7 @@ props.photofriends.photo.map (f => <PhotoFriends photo={f.photo}/>);
         <NavLink to='/content' activeClassName={s.active} >content</NavLink>
       </div>
       <div className={s.item}>
-        <NavLink to='/navmassage' activeClassName={s.active} >massages</NavLink>
+        <NavLink to='/navmassage' activeClassName={s.active} >messages</NavLink>
       </div>
       <div className={s.item}>
         <NavLink to='/navcard' activeClassName={s.active} >card</NavLink>
