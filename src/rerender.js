@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {addPost , updateNewPostText} from './Redux/State'
+import {addPost , sendMessage, updateNewMessageText, updateNewPostText} from './Redux/State'
 
 export let rerenderEntireTree =(state)=>{
 ReactDOM.render( 
     <React.StrictMode >
-    <App state = { state } addPost = { addPost } updateNewPostText={updateNewPostText}/> 
+    <App state = { state } 
+    addPost = { addPost } 
+    updateNewPostText={updateNewPostText}
+     sendMessage={sendMessage}
+     updateNewMessageText={updateNewMessageText}/> 
     </React.StrictMode > ,
     document.getElementById('root')
 );

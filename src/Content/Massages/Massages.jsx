@@ -5,7 +5,7 @@ const Massages = (props) => {
   
   return (
     <div className={s.mass}>
-      <img src = {'../../assets/img/avatar.jpg'}/>
+      <img src = '../../assets/img/avatar.jpg'/>
 {props.message}
 <div>
   <span>like</span> {props.likesCount}

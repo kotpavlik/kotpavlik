@@ -25,7 +25,8 @@ let state = {
             { id: 2, message: "Игорек,как дела?" },
             { id: 3, message: "В качалку гоним к 12.00" },
             { id: 4, message: "Молчишь-в жопе торчишь" }
-        ]
+        ],
+        newMessageText:''
     },
 
     friendsPage: {
@@ -53,5 +54,24 @@ export let updateNewPostText = (newText) => {
 
     rerenderEntireTree(state);
 }
+
+
+
+export let sendMessage = () => {
+    let NewMessage = {
+        id: 5,
+        message: state.messagesPage.newMessageText,
+    };
+    state.messagesPage.messages.push(NewMessage);
+    state.messagesPage.newMessageText='';
+    rerenderEntireTree(state); 
+}
+
+export let updateNewMessageText = (newText) => {
+    state.messagesPage.newMessageText=newText;
+
+    rerenderEntireTree(state);
+}
+
 
 export default state;

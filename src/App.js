@@ -22,7 +22,12 @@ const App = (props) => {
               state={props.state.contentPage}
               addPost={props.addPost}
               updateNewPostText={props.updateNewPostText} />} />
-          <Route path='/navmassage' render={() => <NavMassage state={props.state.messagesPage} />} />
+          <Route path='/navmassage' render={() => 
+          <NavMassage 
+          state={props.state.messagesPage} 
+          sendMessage={props.sendMessage}
+          updateNewMessageText ={props.updateNewMessageText}
+          />} />
           <Route path='/navcard' render={() => <NavCard />} />
           <Route path='/navmedia' render={() => <NavMedia />} />
           <Route path='/friends' render={() => <NavFriends />} />
