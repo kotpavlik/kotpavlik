@@ -1,6 +1,8 @@
-import { rerenderEntireTree } from "../rerender";
+let rerenderEntireTree = () => {
+console.log('ya v ahue');
+}
 
-let state = {
+ let state = {
     contentPage: {
         posts: [
             { id: 1, post: "fuck u", likesCount: 5 },
@@ -38,7 +40,7 @@ let state = {
     },
 }
 
-export let addPost = () => {
+export const addPost = () => {
     let NewPost = {
         id: 5,
         post: state.contentPage.newPostText,
@@ -46,31 +48,35 @@ export let addPost = () => {
     };
     state.contentPage.posts.push(NewPost);
     state.contentPage.newPostText='';
-    rerenderEntireTree(state);   
+    rerenderEntireTree();   
 }
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
     state.contentPage.newPostText=newText;
 
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 }
 
 
 
-export let sendMessage = () => {
+export const sendMessage = () => {
     let NewMessage = {
         id: 5,
         message: state.messagesPage.newMessageText,
     };
     state.messagesPage.messages.push(NewMessage);
     state.messagesPage.newMessageText='';
-    rerenderEntireTree(state); 
+    rerenderEntireTree(); 
 }
 
-export let updateNewMessageText = (newText) => {
+export const updateNewMessageText = (newText) => {
     state.messagesPage.newMessageText=newText;
 
-    rerenderEntireTree(state);
+    rerenderEntireTree();
+}
+
+export const subscribe = (observer) => {
+rerenderEntireTree = observer ;
 }
 
 
