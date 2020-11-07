@@ -10,7 +10,7 @@ import NavMassage from './NavMassage/NavMassage';
 import NavMedia from './NavMedia/NavMedia';
 
 const App = (props) => {
-debugger;
+
   return (
     <BrowserRouter>
       <div className='app-wrapper'>

@@ -1,8 +1,5 @@
-let rerenderEntireTree = () => {
-console.log('ya v ahue');
-}
-
- let state = {
+let store = {
+      _state:{
     contentPage: {
         posts: [
             { id: 1, post: "fuck u", likesCount: 5 },
@@ -38,46 +35,61 @@ console.log('ya v ahue');
             { id: 3, photo: " 'https://scontent-waw1-1.xx.fbcdn.net/v/t1.0-9/86651970_963575340705579_1801774055238402048_n.jpg?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=c2Q7n3gQucUAX85kM2A&_nc_ht=scontent-waw1-1.xx&oh=206cd460fc6ae97d1617fa365eba0542&oe=5FADD765' " }
         ]
     },
-}
-
-export const addPost = () => {
+},
+getState () {
+return this._state
+},
+ _callSubscriber() {
+console.log('ya v ahue');
+},
+ addPost()  {
     let NewPost = {
         id: 5,
-        post: state.contentPage.newPostText,
+        post: this._state.contentPage.newPostText,
         likesCount: 0
     };
-    state.contentPage.posts.push(NewPost);
-    state.contentPage.newPostText='';
-    rerenderEntireTree();   
-}
+    this._state.contentPage.posts.push(NewPost);
+    this._state.contentPage.newPostText='';
+    this._callSubscriber();   
+},
+updateNewPostText(newText)  {
+    this._state.contentPage.newPostText=newText;
 
-export const updateNewPostText = (newText) => {
-    state.contentPage.newPostText=newText;
-
-    rerenderEntireTree();
-}
-
-
-
-export const sendMessage = () => {
+    this._callSubscriber();
+},
+sendMessage()  {
     let NewMessage = {
         id: 5,
-        message: state.messagesPage.newMessageText,
+        message: this._state.messagesPage.newMessageText,
     };
-    state.messagesPage.messages.push(NewMessage);
-    state.messagesPage.newMessageText='';
-    rerenderEntireTree(); 
+    this._state.messagesPage.messages.push(NewMessage);
+    this._state.messagesPage.newMessageText='';
+    this._callSubscriber(); 
+},
+updateNewMessageText(newText) {
+    this._state.messagesPage.newMessageText=newText;
+
+    this._callSubscriber();
+},
+subscribe(observer)  {
+    this._callSubscriber = observer ;
+}
 }
 
-export const updateNewMessageText = (newText) => {
-    state.messagesPage.newMessageText=newText;
-
-    rerenderEntireTree();
-}
-
-export const subscribe = (observer) => {
-rerenderEntireTree = observer ;
-}
+export default store;
 
 
-export default state;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
