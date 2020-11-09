@@ -19,8 +19,7 @@ const NavMassage = (props) => {
             </div>
             <div>
                 <TextareaNavMessage 
-                sendMessage={props.sendMessage} 
-                updateNewMessageText ={props.updateNewMessageText}
+                dispatch={props.dispatch}
                 state={props.state}/>
             </div>
         </div>

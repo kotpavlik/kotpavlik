@@ -3,18 +3,19 @@ import s from './Content.module.css'
 import Massages from './Massages/Massages';
 
 const Content = (props) => {
-  
+
 
   let postsElements =
     props.state.posts.map(p => <Massages message={p.post} likesCount={p.likesCount} />);
 
   let addPost = () => {
-    props.addPost();
+    props.dispatch({ type: 'ADD-POST' });
   }
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-props.updateNewPostText(text);
+    let action = { type: 'UPDATE-NEW-POST-TEXT', newText: text };
+    props.dispatch(action);
   }
 
   let newPostElement = React.createRef();

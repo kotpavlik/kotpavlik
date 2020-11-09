@@ -20,14 +20,11 @@ const App = (props) => {
           <Route path='/content' render={() =>
             <Content
               state={props.state.contentPage}
-              addPost={props.addPost}
-              updateNewPostText={props.updateNewPostText} />} />
+              dispatch={props.dispatch}/>} />
           <Route path='/navmassage' render={() => 
           <NavMassage 
           state={props.state.messagesPage} 
-          sendMessage={props.sendMessage}
-          updateNewMessageText ={props.updateNewMessageText}
-          />} />
+          dispatch={props.dispatch}/>} />
           <Route path='/navcard' render={() => <NavCard />} />
           <Route path='/navmedia' render={() => <NavMedia />} />
           <Route path='/friends' render={() => <NavFriends />} />
