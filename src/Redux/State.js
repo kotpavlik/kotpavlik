@@ -1,3 +1,8 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT' ;
+const SEND_MESSAGE = 'SEND-MESSAGE' ;
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT' ;
+
 let store = {
     _state: {
         contentPage: {
@@ -95,6 +100,7 @@ let store = {
         return this._state
     },
     dispatch(action) {
+    
         if (action.type === 'ADD-POST') {
             let NewPost = {
                 id: 5,
@@ -124,5 +130,11 @@ let store = {
         }
     }
 }
+
+export const addPostActionCreator = () => ({ type:ADD_POST})
+export const updateNewPostActionCreator = (text) => ({type:UPDATE_NEW_POST_TEXT, newText:text});
+
+export const sendMessageCreator = () => ({ type:SEND_MESSAGE});
+export const updateNewMessageActionCreator = (text) => ({type:UPDATE_NEW_MESSAGE_TEXT, newText:text});
 
 export default store;

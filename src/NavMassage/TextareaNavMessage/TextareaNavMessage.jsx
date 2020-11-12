@@ -1,16 +1,17 @@
 import React from 'react';
+import { sendMessageCreator, updateNewMessageActionCreator } from '../../Redux/State';
 import s from './TextareaNavMessage.module.css'
 
 const TextareaNavMessage = (props) => {
-    let newMessageElement = React.createRef();
+    
 
     let sendMessage = () => {
-        props.dispatch({ type: 'SEND-MESSAGE' });
+        props.dispatch(sendMessageCreator());
     }
 
-    let onMessageChange = () => {
-        let text = newMessageElement.current.value;
-        let action = { type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text };
+    let onMessageChange = (e) => {
+        let text = e.target.value;
+        let action = updateNewMessageActionCreator(text);
         props.dispatch(action);
     }
 
@@ -23,7 +24,6 @@ const TextareaNavMessage = (props) => {
                     onChange={onMessageChange}
                     placeholder="Please,write"
                     className={s.textarea}
-                    ref={newMessageElement}
                     value={props.state.newMessageText} />
             </div>
             <div className={s.but}>

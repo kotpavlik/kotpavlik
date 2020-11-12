@@ -1,4 +1,5 @@
 import React from 'react';
+import { addPostActionCreator, updateNewPostActionCreator } from '../Redux/State';
 import s from './Content.module.css'
 import Massages from './Massages/Massages';
 
@@ -9,16 +10,15 @@ const Content = (props) => {
     props.state.posts.map(p => <Massages message={p.post} likesCount={p.likesCount} />);
 
   let addPost = () => {
-    props.dispatch({ type: 'ADD-POST' });
+    props.dispatch(addPostActionCreator());
   }
 
-  let onPostChange = () => {
-    let text = newPostElement.current.value;
-    let action = { type: 'UPDATE-NEW-POST-TEXT', newText: text };
+  let onPostChange = (e) => {
+    let text = e.target.value;
+    let action = updateNewPostActionCreator(text);
     props.dispatch(action);
   }
 
-  let newPostElement = React.createRef();
 
   return (
     <div>
@@ -29,7 +29,6 @@ const Content = (props) => {
             onChange={onPostChange}
             placeholder="Please,write"
             className={s.textarea}
-            ref={newPostElement}
             value={props.state.newPostText} />
         </div>
         <div className={s.but}>

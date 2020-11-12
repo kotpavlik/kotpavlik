@@ -5,7 +5,7 @@ import s from './NavMassage.module.css'
 import TextareaNavMessage from './TextareaNavMessage/TextareaNavMessage';
 
 const NavMassage = (props) => {
-    debugger;
+    
     let dialogsElements = props.state.dialogs.map (d => <Dialog name={d.name} id={d.id} />);
     let messagesElements = props.state.messages.map (m => <Mass message={m.message} />);
 
