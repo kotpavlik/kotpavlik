@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
-import Content from './Content/Content';
-import Header from './Header/Header';
-import Navbar from './Navbar/Navbar';
-import NavCard from './NavCard/NavCard';
-import NavFriends from './NavFriends/Friends';
-import NavMassage from './NavMassage/NavMassage';
-import NavMedia from './NavMedia/NavMedia';
+import Content from './Componets/Content/Content';
+import Header from './Componets/Header/Header';
+import Navbar from './Componets/Navbar/Navbar';
+import NavCard from './Componets/NavCard/NavCard';
+import NavFriends from './Componets/NavFriends/Friends';
+import NavMassage from './Componets/NavMassage/NavMassage';
+import NavMedia from './Componets/NavMedia/NavMedia';
 
 const App = (props) => {
 

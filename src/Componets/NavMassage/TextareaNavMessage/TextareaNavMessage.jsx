@@ -1,5 +1,5 @@
 import React from 'react';
-import { sendMessageCreator, updateNewMessageActionCreator } from '../../Redux/State';
+import { sendMessageCreator, updateNewMessageActionCreator } from '../../../Redux/reducerMessages';
 import s from './TextareaNavMessage.module.css'
 
 const TextareaNavMessage = (props) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { addPostActionCreator, updateNewPostActionCreator } from '../Redux/State';
+import { addPostActionCreator, updateNewPostActionCreator } from '../../Redux/reducerContent';
 import s from './Content.module.css'
 import Massages from './Massages/Massages';
 
