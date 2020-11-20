@@ -1,8 +1,37 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
+let initialState ={
+    posts: [{
+        id: 1,
+        post: "fuck u",
+        likesCount: 5
+    },
+    {
+        id: 2,
+        post: "good luck",
+        likesCount: 23
+    },
+    {
+        id: 3,
+        post: "nice try",
+        likesCount: 13
+    },
+    {
+        id: 4,
+        post: "maybe",
+        likesCount: 76
+    },
+    {
+        id: 5,
+        post: "real talk",
+        likesCount: 29
+    }
+],
+newPostText: ''
+};
 
-const reducerContent = (state, action) => {
+const reducerContent = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
             let NewPost = {

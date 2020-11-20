@@ -5,7 +5,7 @@ import PhotoFriends from './PhotoFriends/PhotoFriends';
 
 
 const Navbar = (props) => {
-
+debugger;
 let friendsElements = 
 props.photofriends.photo.map (f => <PhotoFriends photo={f.photo}/>);
 
