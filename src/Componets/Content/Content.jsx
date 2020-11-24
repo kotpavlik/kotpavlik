@@ -1,22 +1,21 @@
 import React from 'react';
-import { addPostActionCreator, updateNewPostActionCreator } from '../../Redux/reducerContent';
 import s from './Content.module.css'
 import Massages from './Massages/Massages';
 
 const Content = (props) => {
-
+debugger;
 
   let postsElements =
-    props.state.posts.map(p => <Massages message={p.post} likesCount={p.likesCount} />);
+    props.store.posts.map(p => <Massages message={p.post} likesCount={p.likesCount} />);
 
   let addPost = () => {
-    props.dispatch(addPostActionCreator());
+    props.onAddPost();
   }
 
   let onPostChange = (e) => {
     let text = e.target.value;
-    let action = updateNewPostActionCreator(text);
-    props.dispatch(action);
+    props.updateNewPostText(text);
+    
   }
 
 
@@ -29,7 +28,7 @@ const Content = (props) => {
             onChange={onPostChange}
             placeholder="Please,write"
             className={s.textarea}
-            value={props.state.newPostText} />
+            value={props.store.newPostText} />
         </div>
         <div className={s.but}>
           <button onClick={addPost}>send</button>

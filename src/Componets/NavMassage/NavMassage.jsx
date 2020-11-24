@@ -2,12 +2,12 @@ import React from 'react';
 import Dialog from './Dialog/Dialog';
 import Mass from './Mass/Mass';
 import s from './NavMassage.module.css'
-import TextareaNavMessage from './TextareaNavMessage/TextareaNavMessage';
+import TextareaNavMessageContainer from './TextareaNavMessage/TextareaNavMessageContainer';
 
 const NavMassage = (props) => {
-    
-    let dialogsElements = props.state.dialogs.map (d => <Dialog name={d.name} id={d.id} />);
-    let messagesElements = props.state.messages.map (m => <Mass message={m.message} />);
+    debugger;
+    let dialogsElements = props.store.dialogs.map (d => <Dialog name={d.name} id={d.id} />);
+    let messagesElements = props.store.messages.map (m => <Mass message={m.message} />);
 
     return (
         <div className={s.navmassage} >
@@ -18,9 +18,9 @@ const NavMassage = (props) => {
                 {messagesElements}
             </div>
             <div>
-                <TextareaNavMessage 
+                <TextareaNavMessageContainer 
                 dispatch={props.dispatch}
-                state={props.state}/>
+                store={props.store}/>
             </div>
         </div>
     )

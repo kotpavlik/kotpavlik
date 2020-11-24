@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
-import Content from './Componets/Content/Content';
+import ContentContainer from './Componets/Content/ContentContainer';
 import Header from './Componets/Header/Header';
 import Navbar from './Componets/Navbar/Navbar';
 import NavCard from './Componets/NavCard/NavCard';
@@ -10,21 +10,21 @@ import NavMassage from './Componets/NavMassage/NavMassage';
 import NavMedia from './Componets/NavMedia/NavMedia';
 
 const App = (props) => {
-
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
-        <Navbar photofriends={props.state.friendsPage} />
+        <Navbar photofriends={props.store.friendsPage} />
         <div className='app-wrapper-content'>
           <Route path='/content' render={() =>
-            <Content
-              state={props.state.contentPage}
+            <ContentContainer
+              store={props.store}
               dispatch={props.dispatch}/>} />
           <Route path='/navmassage' render={() => 
           <NavMassage 
-          state={props.state.messagesPage} 
-          dispatch={props.dispatch}/>} />
+          store={props.store.messagesPage} 
+          dispatch={props.dispatch}/>}
+          store={props.store} />
           <Route path='/navcard' render={() => <NavCard />} />
           <Route path='/navmedia' render={() => <NavMedia />} />
           <Route path='/friends' render={() => <NavFriends />} />
