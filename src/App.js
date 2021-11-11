@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import s from './App.module.css';
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import Shop from './components/Shop/Shop';
@@ -8,7 +8,7 @@ import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <div className ='app-wraper' >
+    <div className ={s.wraper} >
       <Header/>
       <NavBar/>
       <Shop/>

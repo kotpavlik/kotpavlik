@@ -1,0 +1,5 @@
+.shop {
+    grid-area: s;
+    color: pink;
+    border: 2px solid #666;
+}

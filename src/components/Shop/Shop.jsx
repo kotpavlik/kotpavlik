@@ -1,9 +1,10 @@
 import React from 'react';
 import ProductPhoto from './Product/ProductPhoto';
+import s from './Shop.module.css'
 
 const Shop = () => {
 return (
-<div className="Shop">Имя категории
+<div className={s.shop}>Имя категории
 <ProductPhoto/>
 <ProductPhoto/>
 <ProductPhoto/>

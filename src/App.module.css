@@ -1,4 +1,4 @@
-    .app-wraper {
+    .wraper {
         display: grid;
         grid-template-areas: "h h" "n s" "f f";
         grid-template-columns: 2fr 10fr;
@@ -26,11 +26,5 @@
     .Shop {
         grid-area: s;
         color: pink;
-        border: 2px solid #666;
-    }
-    
-    .Footer {
-        grid-area: f;
-        color: green;
         border: 2px solid #666;
     }

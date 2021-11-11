@@ -1,8 +1,9 @@
 import React from 'react';
+import s from './NavBar.module.css'
 
 const NavBar  = () => {
 return (
-<div className="NavBar">
+<div className={s.navBar}>
     <div className = 'pants'>штаны</div>
     <div className = 't-shirts'>футболки</div>
     <div className = 'dresses'>платья</div>
