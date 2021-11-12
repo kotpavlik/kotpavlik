@@ -1,12 +1,16 @@
 import React from 'react';
-import s from './Specifications.module.css'
+import Review from './Review/Review';
+import s from './Specifications.module.css';
 
-const Specifications = () => {
+
+const Specifications = (props) => {  
+    debugger;  
 return (
 <div className={s.specifications}>
-    <div className ={s.name}>Название : Панама</div>
-    <div className ={s.comp}>Состав : 50% хлопок 25% плащевка 25% вискоза</div>
-    <div className ={s.price}>Цена : 60 BYN.</div>
+    <div className ={s.name}> Назывние : {props.name}</div>
+    <div className ={s.comp}>Состав : {props.comp}</div>
+    <div className ={s.price}>Цена : {props.price} BYN.</div>
+    <Review/>
     <button type ="actions" className={s.bye}>купить</button>
 </div>
 );
