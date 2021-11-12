@@ -1,9 +1,8 @@
 .header {
+    display: grid;
+    grid-template-columns: 45% 10% 35% 10%;
+    grid-template-rows: 70px;
     grid-area: h;
-    color: red;
-    border: 2px solid #666;
-}
-
-img {
-    width: 50px;
+    cursor: pointer;
+    align-items: center;
 }

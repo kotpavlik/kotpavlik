@@ -1,0 +1,50 @@
+.mhead {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    font-size: 25px;
+}
+
+.shop {
+    transition-duration: 1s;
+}
+
+.shop:hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 1s;
+}
+
+.new {
+    transition-duration: 1s;
+}
+
+.new:hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 1s;
+}
+
+.man {
+    transition-duration: 1s;
+}
+
+.man:hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 1s;
+}
+
+.woman {
+    transition-duration: 1s;
+}
+
+.woman:hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 1s;
+}
+
+.about {
+    transition-duration: 1s;
+}
+
+.about:hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 1s;
+}

@@ -1,5 +1,67 @@
 .footer {
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr 1fr 1fr 3fr;
+    grid-template-rows: 20px;
+    grid-template-areas: ". i p m s .";
     grid-area: f;
-    color: green;
-    border: 2px solid #666;
+    height: 50px;
+    color: rgb(0, 0, 0);
+    margin: 25px 0px 0px 0px;
+    text-align: center;
+}
+
+a:hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 1s;
+}
+
+a {
+    transition-duration: 1s;
+}
+
+.inst {
+    grid-area: i;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.inst.hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 2s;
+}
+
+.phone {
+    grid-area: p;
+    font-size: 18px;
+    cursor: pointer;
+    transition-duration: 2s;
+}
+
+.phone:hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 2s;
+}
+
+.maps {
+    grid-area: m;
+    font-size: 18px;
+    cursor: pointer;
+    transition-duration: 2s;
+}
+
+.maps:hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 2s;
+}
+
+.yearsStart {
+    grid-area: s;
+    font-size: 18px;
+    cursor: pointer;
+    transition-duration: 2s;
+}
+
+.yearsStart:hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 2s;
 }

@@ -4,7 +4,11 @@ import s from './Shop.module.css'
 
 const Shop = () => {
 return (
-<div className={s.shop}>Имя категории
+<div className={s.shop}>
+   <div className={s.header}> Имя категории </div>
+<ProductPhoto/>
+<ProductPhoto/>
+<ProductPhoto/>
 <ProductPhoto/>
 <ProductPhoto/>
 <ProductPhoto/>

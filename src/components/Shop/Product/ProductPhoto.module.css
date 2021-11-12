@@ -1,0 +1,18 @@
+.photo>img {}
+
+.photo {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "im sp";
+    padding: 10px;
+    margin: 0px 0px 30px 0px;
+    grid-gap: 15px;
+    align-content: center;
+}
+
+.im {
+    grid-area: im;
+    width: 200px;
+    position: relative;
+    top: 8px;
+}

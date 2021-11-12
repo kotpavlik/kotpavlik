@@ -1,13 +1,14 @@
 import React from 'react';
+import s from './MenuHead.module.css'
 
 const MenuHead = () => {
 return (
-<div className="menu">
-    <div className="shop">магазин</div>
-    <div className="new">новинки</div>
-    <div className="man">мужчинам</div>
-    <div className="woman">женщинам</div>
-    <div className="abautUs">он нас</div>
+<div className={s.mhead}>
+    <div className={s.shop}>магазин</div>
+    <div className={s.new}>новинки</div>
+    <div className={s.man}>мужчинам</div>
+    <div className={s.woman}>женщинам</div>
+    <div className={s.about}>он нас</div>
 </div>
 );
 }

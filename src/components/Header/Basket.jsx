@@ -1,8 +1,9 @@
 import React from 'react';
+import s from './Basket.module.css';
 
 const Basket = () => {
 return (
-<div className="basket">карзина</div>
+<div className={s.basket}>корзина</div>
 );
 }
 

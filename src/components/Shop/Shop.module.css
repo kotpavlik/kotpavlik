@@ -1,5 +1,21 @@
 .shop {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(50px auto) minmax(100px auto) minmax(100px auto);
+    grid-template-areas: "h h h";
     grid-area: s;
-    color: pink;
-    border: 2px solid #666;
+}
+
+.header {
+    grid-area: h;
+    font-size: 50px;
+    background-color: rgb(236, 236, 236);
+    padding: 0px 0px 10px 0px;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+
+.header:hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 1s;
 }
