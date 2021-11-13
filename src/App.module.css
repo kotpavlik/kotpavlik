@@ -91,10 +91,13 @@ h6 {
 
 .wraper {
     display: grid;
-    grid-template-areas: "h h" "n s" "f f";
-    grid-template-columns: 2fr 10fr;
+    grid-template-areas: "h h" "c c" "f f";
     grid-template-rows: 1fr auto 1fr;
     grid-gap: 2px;
     text-align: center;
     font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.body_wraper {
+    grid-area: c;
 }
