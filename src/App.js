@@ -14,7 +14,7 @@ function App() {
     <div className ={s.wraper} >
       <Header/>
       <div className={s.body_wraper}>
-      {/* <Shop/> */}
+      <Shop/>
       <New/>
       <ForMen/>
       <ForWomen/>

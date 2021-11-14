@@ -1,0 +1,30 @@
+.forWomen {
+    display: grid;
+    grid-template-columns: 13% 87%;
+    grid-template-areas: "n s";
+    border-bottom: 1px solid #666;
+}
+
+.shopFW {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(50px auto) minmax(100px auto) minmax(100px auto);
+    grid-template-areas: "h h h";
+    grid-area: s;
+}
+
+.headerFW {
+    grid-area: h;
+    font-size: 50px;
+    background-color: rgb(236, 236, 236);
+    padding: 0px 0px 20px 0px;
+    cursor: pointer;
+    transition-duration: 1s;
+    user-select: none;
+    border-bottom: 1px solid #666;
+}
+
+.headerFW:hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 1s;
+}

@@ -1,0 +1,5 @@
+.posts {
+    grid-area: p;
+    border: 1px solid #666;
+    padding: 10px;
+}

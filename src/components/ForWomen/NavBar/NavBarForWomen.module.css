@@ -1,0 +1,26 @@
+.navBar {
+    font-size: 25px;
+    grid-area: n;
+    background-color: rgb(236, 236, 236);
+    border-right: 1px solid #666;
+}
+
+.name {
+    text-align: left;
+    position: relative;
+    top: 60px;
+    padding: 15px 0px 15px 30px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    min-height: 59px;
+    user-select: none;
+}
+
+.name:hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 0.5s;
+}
+
+.name:active {
+    font-size: 22px;
+}

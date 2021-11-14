@@ -1,0 +1,49 @@
+.specifications {
+    display: grid;
+    grid-area: sp;
+    grid-gap: 5px;
+    padding: 5px 0px 5px 0px;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    max-width: 100px;
+}
+
+.name {
+    text-align: start;
+    vertical-align: bottom;
+    padding: 10px 0px 0px 10px;
+    font-size: 17px;
+}
+
+.comp {
+    text-align: start;
+    padding: 10px 0px 0px 10px;
+    font-size: 17px;
+}
+
+.price {
+    text-align: start;
+    font-size: 25px;
+    padding: 10px 0px 0px 10px;
+}
+
+.bye {
+    font-size: 20px;
+    grid-row-start: 5;
+    width: 150px;
+    height: 50px;
+    position: relative;
+    left: 10px;
+    border-radius: 25px;
+    transition-duration: 0.5s;
+}
+
+.bye:hover {
+    transition-duration: 0.5s;
+    color: white;
+    background-color: black;
+}
+
+.bye:active {
+    transition-duration: 0.5s;
+    font-size: 25px;
+}
