@@ -1,13 +1,12 @@
 .buttons {
     grid-area: b;
     padding: 25px 0px 0px 0px;
-    justify-self: end;
+    text-align: end;
 }
 
 .text {
     border-radius: 50px;
-    min-width: 300px;
-    max-width: 800px;
+    width: 500px;
     height: 50px;
     padding: 10px 25px 10px 25px;
     font-size: 15px;
@@ -19,24 +18,31 @@
     transition-duration: 1s;
 }
 
-.sendlike {
-    font-size: 20px;
-    min-width: 100px;
-    height: 30px;
-    position: relative;
-    left: 10px;
-    border-radius: 25px;
-    transition-duration: 0.5s;
-    margin: 10px;
+.buttReview {
+    max-height: 30px;
 }
 
-.sendlike:hover {
+.send {
+    position: relative;
+    font-size: 20px;
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
+    transition-duration: 0.5s;
+    margin: 5px;
+    border: 1px solid #666;
+}
+
+.send:hover {
     transition-duration: 0.5s;
     color: white;
     background-color: black;
 }
 
-.sendlike:active {
+.send:active {
     transition-duration: 0.5s;
+    box-shadow: 0px 0px 8px 2px #666;
     font-size: 18px;
+    color: pink;
+    background-color: #fff;
 }

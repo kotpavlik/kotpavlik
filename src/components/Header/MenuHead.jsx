@@ -1,16 +1,27 @@
-import React from 'react';
-import s from './MenuHead.module.css'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import s from "./MenuHead.module.css";
 
 const MenuHead = () => {
-return (
-<div className={s.mhead}>
-    <div className={`${s.headName} ${s.shop}`}>магазин</div>
-    <div className={`${s.headName} ${s.new}`}>новинки</div>
-    <div className={`${s.headName} ${s.men}`}>мужчинам</div>
-    <div className={`${s.headName} ${s.women}`}>женщинам</div>
-    <div className={`${s.headName} ${s.about}`}>он нас</div>
-</div>
-);
-}
+  return (
+    <div className={s.mhead}>
+      <div className={`${s.headName} ${s.shop}`}>
+        <NavLink className={({isActive})=>isActive ? s.activeLink : ' '} to="/shop" >магазин</NavLink>
+      </div>
+      <div className={`${s.headName} ${s.new}`}>
+        <NavLink className={({isActive})=>isActive ? s.activeLink : ' '}  to="/new">новинки</NavLink>
+      </div>
+      <div className={`${s.headName} ${s.men}`}>
+        <NavLink className={({isActive})=>isActive ? s.activeLink : ' '}  to="/formen">мужчинам</NavLink>
+      </div>
+      <div className={`${s.headName} ${s.women}`}>
+        <NavLink className={({isActive})=>isActive ? s.activeLink : ' '}  to="/forwomen">женщинам</NavLink>
+      </div>
+      <div className={`${s.headName} ${s.about}`}>
+        <NavLink className={({isActive})=>isActive ? s.activeLink : ' '}   to="/aboutus">о нас</NavLink>
+      </div>
+    </div>
+  );
+};
 
-export default  MenuHead;
+export default MenuHead;

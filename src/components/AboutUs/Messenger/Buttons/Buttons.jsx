@@ -10,8 +10,7 @@ const Buttons = () => {
         placeholder="напиши..."
       ></textarea>
       <div className={s.buttReview}>
-        <button className={s.sendlike}>like</button>
-        <button className={s.sendlike}>send</button>
+        <button className={s.send}>send</button>
       </div>
     </div>
   );

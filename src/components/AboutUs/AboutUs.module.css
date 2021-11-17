@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto auto;
-    grid-template-areas: "h h" "p t" "m m";
+    grid-template-areas: "h h" "p t" "maps m";
 }
 
 .headUs {
@@ -19,3 +19,23 @@
     text-shadow: 0 0 0px #333;
     cursor: pointer;
 }
+
+.maps {
+    grid-area: maps;
+    margin: 50px;
+}
+
+.maps>img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #666;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.maps>img:hover {}

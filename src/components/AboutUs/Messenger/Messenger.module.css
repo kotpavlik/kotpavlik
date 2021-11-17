@@ -1,9 +1,5 @@
 .messenger {
     grid-area: m;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    grid-template-areas: "p p" ". b";
-    border-top: 1px solid black;
-    padding: 30px;
+    padding: 50px;
+    justify-self: right;
 }

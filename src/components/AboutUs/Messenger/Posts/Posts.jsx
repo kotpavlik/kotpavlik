@@ -1,10 +1,12 @@
 import React from 'react';
 import s from './Posts.module.css'
 
-const Posts = () => {
+const Posts = (props) => {
 return (
 <div className={s.posts}>
-<div className={s.post}>Hello Nice clothes</div>
+<div className={s.avatar}><img src="/aboutUsPhoto/1.jpg" alt="" /> </div>
+<div className={s.post}> {props.post} </div>
+<div className={s.like}><span>like</span> {props.like}</div>
 </div>
 );
 }
