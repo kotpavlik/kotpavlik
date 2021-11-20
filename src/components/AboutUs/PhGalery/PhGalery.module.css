@@ -6,7 +6,7 @@ img {
 }
 
 .phg {
-    grid-area: p;
+    grid-area: photoGalery;
     padding: .8rem;
     background: black;
     height: 95vh;

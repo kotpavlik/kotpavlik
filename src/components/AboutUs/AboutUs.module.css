@@ -2,11 +2,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto auto;
-    grid-template-areas: "h h" "p t" "maps m";
+    grid-template-areas: "head head" "photoGalery text" "maps messenger";
 }
 
 .headUs {
-    grid-area: h;
+    grid-area: head;
     font-size: 150px;
     font-weight: normal;
     cursor: pointer;

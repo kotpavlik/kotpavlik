@@ -5,7 +5,7 @@ import ProductPants from "./Pants/ProductPants";
 import s from "./Shop.module.css";
 
 const Shop = (props) => {
-  debugger;
+  
   let productPhotoElement = props.productForAll.productArray.map(product => (
     <ProductPhoto
       name={product.name}

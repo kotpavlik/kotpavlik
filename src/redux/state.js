@@ -163,33 +163,31 @@ let store = {
         },
     },
     getState() {
-        debugger;
+
         return this._state;
     },
     _rerenderEntireTree() {
         console.log('state hi');
     },
-
-    addPost() {
-
-        const newPost = {
-            id: 6,
-            post: this._state.AboutUsPage.newPostText,
-            like: 0
-        };
-        this._state.AboutUsPage.PostsArray.push(newPost);
-        this._state.AboutUsPage.newPostText = '';
-
-        this._rerenderEntireTree(this._state);
-    },
-
-    NewPostChange(NewText) {
-        this._state.AboutUsPage.newPostText = NewText;
-        this._rerenderEntireTree(this._state);
-    },
-
     subscribe(observer) {
         this._rerenderEntireTree = observer;
+    },
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            const newPost = {
+                id: 6,
+                post: this._state.AboutUsPage.newPostText,
+                like: 0
+            };
+            this._state.AboutUsPage.PostsArray.push(newPost);
+            this._state.AboutUsPage.newPostText = '';
+            this._rerenderEntireTree(this._state);
+        } else if (action.type === 'NEW_POST-CHANGE') {
+            this._state.AboutUsPage.newPostText = action.NewText;
+            this._rerenderEntireTree(this._state);
+        }
     }
+
+
 }
 export default store;

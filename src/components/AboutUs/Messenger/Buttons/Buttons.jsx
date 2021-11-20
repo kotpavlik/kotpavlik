@@ -7,11 +7,11 @@ const Buttons = (props) => {
   let NewPosteElement = React.createRef();
 
   let addPost = () => {
-    props.addPost();
+    props.dispatch({type:'ADD-POST'});
   };
   let onPostChange = () => {
     let text = NewPosteElement.current.value;
-    props.NewPostChange(text);
+    props.dispatch({type:'NEW_POST-CHANGE',NewText:text});
   };
 
   return (

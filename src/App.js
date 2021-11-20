@@ -10,7 +10,7 @@ import ForWomen from "./components/ForWomen/ForWomen";
 import { Route, Routes } from "react-router";
 
 function App(props) {
-  debugger;
+
   return (
     <div className={s.wraper}>
       <Header />
@@ -34,8 +34,8 @@ function App(props) {
             element={
               <AboutUs
                 about={props.state.AboutUsPage}
-                addPost={props.addPost}
-                NewPostChange={props.NewPostChange}
+                dispatch={props.dispatch}
+                
                 
               />
             }
