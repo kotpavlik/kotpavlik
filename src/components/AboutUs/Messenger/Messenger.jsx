@@ -5,7 +5,7 @@ import Posts from "./Posts/Posts";
 
 const Messenger = (props) => {
  
-  let PostsElements = props.PostsArray.PostsArray.map (postObj => <Posts  post={postObj.post} like ={postObj.like}/> ); 
+  let PostsElements = props.PostsArray.PostsArray.map (postObj => <Posts post={postObj.post} like ={postObj.like}/> ); 
 
   return (
     <div className={s.messenger}>
