@@ -1,16 +1,33 @@
 import React from "react";
-import s from './Buttons.module.css'
+import s from "./Buttons.module.css";
 
-const Buttons = () => {
+const Buttons = (props) => {
+
+ 
+  let NewPosteElement = React.createRef();
+
+  let addPost = () => {
+    props.addPost();
+  };
+  let onPostChange = () => {
+    let text = NewPosteElement.current.value;
+    props.NewPostChange(text);
+  };
+
   return (
     <div className={s.buttons}>
       <textarea
+        ref={NewPosteElement}
+        onChange={onPostChange}
+        value={props.PostsArray.newPostText}
         className={s.text}
         name="text"
         placeholder="напиши..."
-      ></textarea>
+      />
       <div className={s.buttReview}>
-        <button className={s.send}>send</button>
+        <button onClick={addPost} className={s.send}>
+          send
+        </button>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ const AboutUs = (props) => {
       <div className={s.headUs}>Pink Punk</div>
       <PhGalery/>
       <TextAU/>
-      <Messenger PostsArray={props.about}/>
+      <Messenger  PostsArray={props.about} addPost={props.addPost} NewPostChange={props.NewPostChange}/>
       <div className={s.maps}><img src="aboutUsPhoto/maps.jpg" alt="" /></div>
     </div>
   );
