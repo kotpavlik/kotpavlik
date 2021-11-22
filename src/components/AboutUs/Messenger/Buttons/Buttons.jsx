@@ -1,5 +1,7 @@
 import React from "react";
 import s from "./Buttons.module.css";
+import { addPostNewAction } from "../../../../redux/state";
+import { onPostChangeNewAction } from "../../../../redux/state";
 
 const Buttons = (props) => {
 
@@ -7,11 +9,11 @@ const Buttons = (props) => {
   let NewPosteElement = React.createRef();
 
   let addPost = () => {
-    props.dispatch({type:'ADD-POST'});
+    props.dispatch(addPostNewAction());
   };
   let onPostChange = () => {
     let text = NewPosteElement.current.value;
-    props.dispatch({type:'NEW_POST-CHANGE',NewText:text});
+    props.dispatch(onPostChangeNewAction(text));
   };
 
   return (

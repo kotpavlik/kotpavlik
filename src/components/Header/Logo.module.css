@@ -1,5 +1,14 @@
-.logo>img {
+.logo {
     width: 50px;
+    transition-duration: 0.5s;
 }
 
-.logo {}
+.logo:hover {
+    transition-duration: 0.5s;
+    transform: rotateY(360deg);
+}
+
+.activeLink>.logo {
+    width: 60px;
+    transition-duration: 0.5s;
+}

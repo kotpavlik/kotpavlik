@@ -8,6 +8,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import ForMen from "./components/ForMen/ForMen";
 import ForWomen from "./components/ForWomen/ForWomen";
 import { Route, Routes } from "react-router";
+import TestMessenger from "./components/TestMessenger/TestMessenger";
 
 function App(props) {
 
@@ -34,12 +35,11 @@ function App(props) {
             element={
               <AboutUs
                 about={props.state.AboutUsPage}
-                dispatch={props.dispatch}
-                
-                
+                dispatch={props.dispatch} 
               />
             }
           />
+          <Route path="/mess" element={<TestMessenger dispatch={props.dispatch}  dialog={props.state.TestMessengerPage}/>}/>
         </Routes>
       </div>
       <Footer />

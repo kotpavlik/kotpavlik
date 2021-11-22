@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: 45% 10% 35% 10%;
     grid-template-rows: 70px;
-    grid-area: h;
     cursor: pointer;
     align-items: center;
     position: sticky;

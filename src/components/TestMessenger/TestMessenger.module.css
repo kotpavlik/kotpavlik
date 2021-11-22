@@ -1,0 +1,44 @@
+.testMess {
+    min-height: 550px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: minmax(70px, 80px) auto minmax(100px, 100px);
+    grid-template-areas: "header header" "friends mess" "footer footer";
+    grid-gap: 5px;
+}
+
+.header {
+    grid-area: header;
+    font-size: 50px;
+    background-color: rgb(236, 236, 236);
+    padding: 0px 0px 20px 0px;
+    cursor: pointer;
+    transition-duration: 1s;
+    user-select: none;
+    border-bottom: 1px solid #666;
+    max-height: 70px;
+}
+
+.header:hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 1s;
+}
+
+.footer {
+    grid-area: footer;
+    text-align: end;
+    padding: 20px;
+    margin: 5px;
+}
+
+.mess {
+    grid-area: mess;
+    border: 1px solid #666;
+}
+
+.friend {
+    grid-area: friends;
+    border: 1px solid #666;
+    text-align: start;
+    background-color: rgb(236, 236, 236);
+}
