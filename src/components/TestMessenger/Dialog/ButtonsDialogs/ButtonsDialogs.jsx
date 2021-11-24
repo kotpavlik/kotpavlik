@@ -1,5 +1,5 @@
 import React from "react";
-import { addMessageAction, onMessageAction } from "../../../../redux/state";
+import { addMessageAction, onMessageAction } from "../../../../redux/TestMessenger-Reducer";
 import s from "./ButtonsDialogs.module.css";
 
 const ButtonsDialogs = (props) => {

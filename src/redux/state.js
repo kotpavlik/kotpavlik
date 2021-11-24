@@ -1,7 +1,9 @@
-const ADD_POST = 'ADD_POST';
-const NEW_POST_CHANGE = 'NEW_POST_CHANGE';
-const ADD_MESSAGE = 'ADD_MESSAGE';
-const NEW_MESSAGE_CHANGE = 'NEW_MESSAGE_CHANGE';
+import AboutUsReducer from "./AboutUs-Reducer";
+import ForMenReducer from "./ForMen-Reducer";
+import ForWomenReducer from "./ForWomen-Reducer";
+import ShopReducer from "./Shop-Reducer";
+import TestMessengerReducer from "./TestMessenger-Reducer";
+
 
 let store = {
 
@@ -216,44 +218,17 @@ let store = {
         this._rerenderEntireTree = observer;
     },
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            const newPost = {
-                id: 6,
-                post: this._state.AboutUsPage.newPostText,
-                like: 0
-            };
-            this._state.AboutUsPage.PostsArray.push(newPost);
-            this._state.AboutUsPage.newPostText = '';
-            this._rerenderEntireTree(this._state);
-        } else if (action.type === NEW_POST_CHANGE) {
-            this._state.AboutUsPage.newPostText = action.NewText;
-            this._rerenderEntireTree(this._state);
-        } else if (action.type === ADD_MESSAGE) { // создаем action.type
-            const message = this._state.TestMessengerPage.NewMessageText; // определяем чему равна переменная, а она ровна написаному в <textarea/> и передано в NewMessageText     
-            this._state.TestMessengerPage.NewMessageText = ''; // зануляем строку
-            this._state.TestMessengerPage.MessangesArray.push({ id: 5, message: message }); // пушим изменения в массив с данными из переменной сощданой строкой выше
-            this._rerenderEntireTree(this._state); // перерендериваем дерево
-        } else if (action.type === NEW_MESSAGE_CHANGE) { // создаем action.type
-            this._state.TestMessengerPage.NewMessageText = action.NewMessage; // создаем новый action.NewMessage и засовываем его в state в NewMessageText
-            this._rerenderEntireTree(this._state); // перерендериваем дерево
-        }
+
+        this._state.AboutUsPage = AboutUsReducer(this._state.AboutUsPage, action); // этот reducer отрабатывает и превращается в новый AboutUsPage
+        this._state.TestMessengerPage = TestMessengerReducer(this._state.TestMessengerPage, action); // этот reducer отрабатывает и превращается в новый TestMessengerPage
+        this._state.ForWomenPage = ForWomenReducer(this._state.ForWomenPage, action); // этот reducer отрабатывает и превращается в новый ForWomenPage
+        this._state.ForMenPage = ForMenReducer(this._state.ForMenPage, action); // этот reducer отрабатывает и превращается в новый ForMenPage
+        this._state.ShopPage = ShopReducer(this._state.ShopPage, action); // этот reducer отрабатывает и превращается в новый ShopPage
+
+        this._rerenderEntireTree(this._state);
     }
 }
 
-export const addPostNewAction = () => ({
-    type: ADD_POST
-});
-export const onPostChangeNewAction = (text) => ({
-    type: NEW_POST_CHANGE,
-    NewText: text
-});
-export const addMessageAction = () => ({
-    type: ADD_MESSAGE
-});
-export const onMessageAction = (text) => ({
-    type: NEW_MESSAGE_CHANGE,
-    NewMessage: text
-});
 
 
 export default store;

@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Buttons.module.css";
-import { addPostNewAction } from "../../../../redux/state";
-import { onPostChangeNewAction } from "../../../../redux/state";
+import { addPostNewAction } from "../../../../redux/AboutUs-Reducer";
+import { onPostChangeNewAction } from "../../../../redux/AboutUs-Reducer";
 
 const Buttons = (props) => {
 
