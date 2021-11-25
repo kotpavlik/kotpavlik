@@ -1,7 +1,37 @@
 const ADD_POST = 'ADD_POST';
 const NEW_POST_CHANGE = 'NEW_POST_CHANGE';
 
-const AboutUsReducer = (state, action) => {
+let initialState = {
+    PostsArray: [{
+            id: 1,
+            post: "вы молодцы, спасибо что создаёте такую крутую одежу",
+            like: 54
+        },
+        {
+            id: 2,
+            post: "крутая косуха, напишите мне как можно заказать",
+            like: 23
+        },
+        {
+            id: 3,
+            post: "Ребята, у вас крутая команда. Очень интересно за вами наблюдать",
+            like: 33
+        },
+        {
+            id: 4,
+            post: "Добрый день, я таргетолок из Бреста.Хотел бы предложить вам свои услуги",
+            like: 22
+        },
+        {
+            id: 5,
+            post: "А как зовут вашу собаку?",
+            like: 343
+        }
+    ],
+    newPostText: '',
+};
+
+const AboutUsReducer = (state = initialState, action) => {
 
     switch (action.type) { // пояснения по аналогичной работе с switch/case/break в чс TestMessenger-Reducer.js
         case ADD_POST:
