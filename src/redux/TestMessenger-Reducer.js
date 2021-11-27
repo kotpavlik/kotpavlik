@@ -43,16 +43,23 @@ const TestMessengerReducer = (state = initialState, action) => {
 
     switch (action.type) { // если (action.type) равен ...
         case ADD_MESSAGE: // поменяли if else if  на switch/case  и не пишем  break  потому что return останавливает функцию и возвращает её
-            const message = state.NewMessageText; // определяем чему равна переменная, а она ровна написаному в <textarea/> и передано в NewMessageText     
-            state.NewMessageText = ''; // зануляем строку
-            state.MessangesArray.push({
-                id: 5,
-                message: message
-            }); // пушим изменения в массив с данными из переменной сощданой строкой выше
-            return state; // возвращаем state
+            {
+                let stateCopy = {...state }; //работа с объектами.Копируем объект state в новый объект stateCopy. {...state} - это не глубокое копирование.
+                const message = stateCopy.NewMessageText; // определяем чему равна переменная, а она ровна написаному в <textarea/> и передано в NewMessageText.Работаем с скопированым объектом  stateCopy, здесь не нужно глубокое копирование потому что NewMessageText - это примитив    
+                stateCopy.NewMessageText = ''; // зануляем строку в stateCopy
+                stateCopy.MessangesArray = [...stateCopy.MessangesArray] // делаем глубокое копирование MessangesArray
+                stateCopy.MessangesArray.push({ // пушим в stateCopy.MessangesArray 
+                    id: 5,
+                    message: message //строка 48
+                }); // пушим изменения в массив с данными из переменной сощданой строкой выше
+                return stateCopy; // возвращаем state
+            };
         case NEW_MESSAGE_CHANGE:
-            state.NewMessageText = action.NewMessage; // создаем новый action.NewMessage и засовываем его в state в NewMessageText
-            return state;
+            {
+                let stateCopy = {...state }
+                stateCopy.NewMessageText = action.NewMessage; // создаем новый action.NewMessage и засовываем его в state в NewMessageText
+                return stateCopy;
+            };
         default: // если не нашел совпадений то возвращает старый state
             return state;
     }
@@ -63,6 +70,6 @@ export const addMessageAction = () => ({ // создаем переменные 
 });
 export const onMessageAction = (text) => ({
     type: NEW_MESSAGE_CHANGE,
-    NewMessage: text
+    NewMessage: text // этот экшн используем в строке 60,
 });
 export default TestMessengerReducer;

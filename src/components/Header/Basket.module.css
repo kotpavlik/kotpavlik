@@ -15,3 +15,8 @@
     transition-duration: 0.5s;
     font-size: 23px;
 }
+
+.activeLink {
+    color: rgb(255, 0, 157) !important;
+    font-size: 30px;
+}

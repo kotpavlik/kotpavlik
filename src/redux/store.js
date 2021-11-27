@@ -7,7 +7,7 @@ import TestMessengerReducer from "./TestMessenger-Reducer";
 
 let store = {
 
-    _state: {
+    _state: { // _state является приватным объектом, на это указывает нижнее подчеркивание и к нему можно обратиться из вне только спомошью гетеров и скткров - функций вызова 
         AboutUsPage: {
             PostsArray: [{
                     id: 1,
@@ -35,7 +35,7 @@ let store = {
                     like: 343
                 }
             ],
-            newPostText: '',
+            newPostText: '', // относиться к <textarea/> и передаётся через props в UI в параметр value = {newPostText}
         },
         ForMenPage: {
             productMenArray: [{
@@ -207,7 +207,7 @@ let store = {
         },
 
     },
-    getState() {
+    getState() { // функция которая отвечает за получения приватных данных как _state
 
         return this._state;
     },
@@ -215,9 +215,9 @@ let store = {
         console.log('state hi');
     },
     subscribe(observer) {
-        this._rerenderEntireTree = observer;
+        this._rerenderEntireTree = observer; // функция которая следит за изменениями в state и отвечает за перерисовку всего дерева
     },
-    dispatch(action) {
+    dispatch(action) { // в store-redux работает автоматически (инкапсулирован) принимает функцию reducer и подменяет кусок state на тот который пришел из этой функции или возвращает прежний state
 
         this._state.AboutUsPage = AboutUsReducer(this._state.AboutUsPage, action); // этот reducer отрабатывает и превращается в новый AboutUsPage
         this._state.TestMessengerPage = TestMessengerReducer(this._state.TestMessengerPage, action); // этот reducer отрабатывает и превращается в новый TestMessengerPage

@@ -7,8 +7,8 @@ import ProductPhotoWomen from './Product/ProductPhotoWomen';
 const ForWomen = (props) => {
 
 
-      let ProductPhotoWomenElement = props.productForWomen.productWomenArray.map (product => <ProductPhotoWomen nameFW ={product.name} compFW={product.comp} priceFW={product.price}/>)
-    
+      let ProductPhotoWomenElement = props.ForWomenPage.productWomenArray.map (product => <ProductPhotoWomen nameFW ={product.name} compFW={product.comp} priceFW={product.price}/>)
+      // эта функция создана для итерации по массиву объекта.Берём массив productWomenArray применяем метод map  назначаем как будет называться ка ячейка массива (product) и проходимся по массиву, после чего получаем переменную которую используем далее вместо тега 
 return (
 <div className={s.forWomen}>
       <NavBarForWomen/>

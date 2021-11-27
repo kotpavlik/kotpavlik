@@ -4,9 +4,9 @@ import NavBarForMen from "./NavBar/NavBarForMen";
 import ProductPhotoMen from "./Product/ProductPhotoMen";
 
 const ForMen = (props) => {
+debugger;
 
-
-  let ProductPhotoMenElement = props.productForMen.productMenArray.map (product => <ProductPhotoMen nameFm={product.name} compFm={product.comp} priceFm = {product.price}/> );
+  let ProductPhotoMenElement = props.ForMenPage.productMenArray.map (product => <ProductPhotoMen nameFm={product.name} compFm={product.comp} priceFm = {product.price}/> );
 
   return (
     <div className={s.forMen}>

@@ -1,19 +1,17 @@
 import React from "react";
 import s from "./Buttons.module.css";
-import { addPostNewAction } from "../../../../redux/AboutUs-Reducer";
-import { onPostChangeNewAction } from "../../../../redux/AboutUs-Reducer";
 
 const Buttons = (props) => {
-
+debugger;
  
   let NewPosteElement = React.createRef();
 
   let addPost = () => {
-    props.dispatch(addPostNewAction());
+    props.OnAddPost();
   };
   let onPostChange = () => {
     let text = NewPosteElement.current.value;
-    props.dispatch(onPostChangeNewAction(text));
+    props.OnPostChange(text);
   };
 
   return (
@@ -21,7 +19,7 @@ const Buttons = (props) => {
       <textarea
         ref={NewPosteElement}
         onChange={onPostChange}
-        value={props.PostsArray.newPostText}
+        value={props.AboutUsPage.newPostText} //достаём value из ButtonsContainer 
         className={s.text}
         name="text"
         placeholder="напиши..."

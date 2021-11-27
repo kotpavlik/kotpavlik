@@ -1,19 +1,19 @@
 import React from "react";
-import { addMessageAction, onMessageAction } from "../../../../redux/TestMessenger-Reducer";
 import s from "./ButtonsDialogs.module.css";
 
 const ButtonsDialogs = (props) => {
 debugger;
 
 
-let NewMessageText = props.dialog.NewMessageText;
-let addMessange =()=> { 
-props.dispatch(addMessageAction())
+let NewMessageText = props.NewMessageText;
+
+let OnAddMessange =()=> { 
+props.addMessange();
 };
 
 let onMessageChange = (e) => {       // (e) означает - этот <textarea/> Свойство target интерфейса Event является ссылкой на объект, который был инициатором события. Он отличается от Event.currentTarget, если обработчик события вызывается во время всплытия (bubbling) или захвата события.
    let text = e.target.value;
-   props.dispatch(onMessageAction(text))
+   props.MessageChange(text);
 };
 
   return (
@@ -22,7 +22,7 @@ let onMessageChange = (e) => {       // (e) означает - этот <textare
           <textarea className={s.text} onChange={onMessageChange} value = {NewMessageText} placeholder='напиши ...'></textarea>
       </div>
       <div className={s.buttContiner}>
-          <button className={s.butt} onClick={addMessange}>send</button>
+          <button className={s.butt} onClick={OnAddMessange}>send</button>
       </div>
     </div>
   );

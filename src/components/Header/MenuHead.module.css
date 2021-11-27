@@ -5,6 +5,7 @@
     }
     
     .headName {
+        min-height: 30px;
         transition-duration: 0.1s;
         user-select: none;
     }
@@ -15,7 +16,8 @@
     }
     
     .headName:active {
-        font-size: 20px;
+        transition-duration: 0.05s;
+        font-size: 23px;
     }
     
     .about {
@@ -24,6 +26,6 @@
     }
     
     .activeLink {
-        text-shadow: 2px 2px 5px 5px #666;
         color: rgb(255, 0, 157) !important;
+        font-size: 30px;
     }

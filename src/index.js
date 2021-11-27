@@ -5,26 +5,24 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from 'react-redux';
 
 
 
-
-
- let rerenderEntireTree = (state) => {
-  ReactDOM.render(
-    <BrowserRouter>
-      <App state={state} dispatch={store.dispatch.bind(store)} />
+  ReactDOM.render( // специальная обертка из модуля библиотеки react-router-dom на строку ниже, занимается роутингами и линками
+    <BrowserRouter> 
+    <Provider store={store}>
+      <App  /> 
+      </Provider>
     </BrowserRouter>,
-    document.getElementById("root")
+    document.getElementById("root") // интропритирует весь код в HTML,JS,CSS нативный и подставляет в указаное место root
   );
-};
-rerenderEntireTree(store.getState());
-store.subscribe(()=>{
- let state = store.getState()
-  rerenderEntireTree(state)});
 
 reportWebVitals();
 
 
-
+// удалили все функции которые перерисовывали нам дерево потому что теперь этим занимается функция connect из
+// react-redux модуля.В нем эта финкция инкапсулирована
+// Так же добавили  <Provider store={store}> это тоже элемент react-redux который занимается созданием и использованием context
+// Context - эта область которая напрямую соеденяет молулиContainer и прокидывает в них state и dispatch
 
