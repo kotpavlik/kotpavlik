@@ -1,0 +1,48 @@
+.wraper {
+    min-height: 150px;
+    max-height: 150px;
+    padding: 10px;
+    text-align: left;
+}
+
+.userName {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px;
+    position: relative;
+    color: #000000;
+    /*задаём цвет ссылки*/
+    cursor: pointer;
+    line-height: 1;
+    /*задаём высоту строки*/
+    text-decoration: none;
+    /*убираем подчёркивание*/
+}
+
+.status {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.userName:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0;
+    /*задаём длинну линии до наведения курсора*/
+    height: 1px;
+    /*задаём ширину линии*/
+    background-color: #000000;
+    /*задаём цвет линии*/
+    content: "";
+    transition: width 0.3s ease-out;
+    /*задаём время анимации*/
+}
+
+.userName:hover:after,
+.userName:focus:after {
+    width: 100%;
+    /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}

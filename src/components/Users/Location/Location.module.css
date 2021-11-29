@@ -1,0 +1,16 @@
+.wraper {
+    min-height: 150px;
+    max-height: 150px;
+    padding: 10px;
+    text-align: left;
+}
+
+.sityName {
+    font-size: 20px;
+    padding: 5px;
+}
+
+.country {
+    font-size: 20px;
+    padding: 20px 5px 5px 5px;
+}

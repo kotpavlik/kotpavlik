@@ -1,0 +1,31 @@
+.wraper {
+    border: 1px solid #666;
+    box-shadow: 10px 10px 20px 5px black;
+    padding: 20px 0px 20px 0px;
+    width: 800px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-areas: "Users Users Users" "LogoFollow NameStatus Location";
+}
+
+.grid1 {
+    grid-area: Users;
+    padding: 10px 0px 10px 10px;
+    text-align: start;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.grid2 {
+    grid-area: LogoFollow;
+}
+
+.grid3 {
+    grid-area: NameStatus;
+}
+
+.grid4 {
+    grid-area: Location;
+}

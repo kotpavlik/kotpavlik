@@ -1,0 +1,72 @@
+.wraper {
+    padding: 0px 0px 0px 0px;
+    text-align: start;
+    padding: 10px;
+    min-height: 150px;
+    max-height: 150px;
+}
+
+.photoContainer {}
+
+.photoContainer>img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #666;
+    border-radius: 50px;
+}
+
+.buttonContainer {
+    max-height: 30px;
+}
+
+.follow {
+    position: relative;
+    font-size: 20px;
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
+    transition-duration: 0.5s;
+    margin: 5px;
+    border: 1px solid #666;
+    background-color: black;
+    color: pink;
+}
+
+.follow:hover {
+    transition-duration: 0.5s;
+    color: white;
+    background-color: black;
+}
+
+.follow:active {
+    transition-duration: 0.5s;
+    box-shadow: 0px 0px 8px 2px #666;
+    font-size: 18px;
+    color: pink;
+    background-color: #fff;
+}
+
+.unfollow {
+    position: relative;
+    font-size: 20px;
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
+    transition-duration: 0.5s;
+    margin: 5px;
+    border: 1px solid #666;
+}
+
+.unfollow:hover {
+    transition-duration: 0.5s;
+    color: white;
+    background-color: black;
+}
+
+.unfollow:active {
+    transition-duration: 0.5s;
+    box-shadow: 0px 0px 8px 2px #666;
+    font-size: 18px;
+    color: pink;
+    background-color: #fff;
+}

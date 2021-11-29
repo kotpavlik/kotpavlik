@@ -8,10 +8,10 @@ const TestMessenger = (props) => {
 
 
   let NewMessageArray = props.TestMessengerPage.MessangesArray.map((mess) => (
-    <Dialog message={mess.message} />
+    <Dialog message={mess.message} key={mess.id} />
   ));
   let NewFriendsArray = props.TestMessengerPage.FriendsArray.map((name) => (
-    <FriendDialog userName={name.userName} />
+    <FriendDialog userName={name.userName} key={name.id} />
   ));
 
   return (

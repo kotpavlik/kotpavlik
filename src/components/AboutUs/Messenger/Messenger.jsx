@@ -4,8 +4,8 @@ import s from "./Messenger.module.css";
 import Posts from "./Posts/Posts";
 
 const Messenger = (props) => {
- debugger;
-  let PostsElements = props.state.PostsArray.map (postObj => <Posts post={postObj.post} like ={postObj.like}/> ); // здесь прокинули пропсы через MessengerContainer
+ 
+  let PostsElements = props.state.PostsArray.map (postObj => <Posts post={postObj.post} like ={postObj.like} key={postObj.id}/> ); // здесь прокинули пропсы через MessengerContainer.Добавляем key={postObj.id} обязательно
 
   return (
     <div className={s.messenger}>

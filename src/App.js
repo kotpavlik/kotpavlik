@@ -9,6 +9,7 @@ import TestMessengerContiner from "./components/TestMessenger/TestMessengerConta
 import ShopContainer from "./components/Shop/ShopContainer";
 import ForMenContainer from "./components/ForMen/ForMenContainer";
 import ForWomenContainer from "./components/ForWomen/ForWomenContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 
 function App(props) {  // это компанента.Мы используем только функциональные компоненты, которые принимают в себя props и возвращают разметку jsx.
@@ -19,26 +20,13 @@ function App(props) {  // это компанента.Мы используем 
       <Header />
       <div className={s.body_wraper}>
         <Routes>
-          <Route
-            path="/shop"
-            element={<ShopContainer/>}
-          />
+          <Route path="/shop" element={<ShopContainer/>}/>
           <Route path="/new" element={<New />} />
-          <Route
-            path="/formen"
-            element={<ForMenContainer />}
-          />
-          <Route
-            path="/forwomen"
-            element={<ForWomenContainer  />}
-          />
-          <Route
-            path="/aboutus"
-            element={
-              <AboutUs/> 
-            }
-          /> 
+          <Route path="/formen" element={<ForMenContainer />}/>
+          <Route path="/forwomen" element={<ForWomenContainer/>}/>
+          <Route path="/aboutus" element={<AboutUs/>}/> 
           <Route path="/mess" element={<TestMessengerContiner />}/> 
+          <Route path="/users" element = {<UsersContainer/>}/>
         </Routes>   
       </div>
       <Footer />

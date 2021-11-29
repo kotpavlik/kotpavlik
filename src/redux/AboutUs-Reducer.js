@@ -35,24 +35,14 @@ const AboutUsReducer = (state = initialState, action) => {
 
     switch (action.type) { // пояснения по аналогичной работе с switch/case/break в чс TestMessenger-Reducer.js
         case ADD_POST:
-            {
-                let newPost = {
-                    id: 6,
-                    post: state.newPostText,
-                    like: 0
-                };
-                let stateCopy = {...state };
-                stateCopy.PostsArray = [...state.PostsArray];
-                stateCopy.PostsArray.push(newPost);
-                stateCopy.newPostText = '';
-                return stateCopy;
-            }
+            return {...state,
+                PostsArray: [...state.PostsArray, { id: 6, post: state.newPostText, like: 0 }], // так пушим
+                newPostText: '' // зануляем
+            };
+
         case NEW_POST_CHANGE:
-            {
-                let stateCopy = {...state };
-                stateCopy.newPostText = action.NewText;
-                return stateCopy;
-            }
+            return {...state, newPostText: action.NewText }; // копируем state и говорим что в newPostText будет текст из action.NewText
+
         default:
             return state;
     }

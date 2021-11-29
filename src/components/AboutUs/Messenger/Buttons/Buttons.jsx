@@ -2,7 +2,7 @@ import React from "react";
 import s from "./Buttons.module.css";
 
 const Buttons = (props) => {
-debugger;
+
  
   let NewPosteElement = React.createRef();
 
