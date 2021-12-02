@@ -3,13 +3,14 @@ import { setUsersAC, toggleFollowAC, toggleUnFollowAC } from "../../redux/Users-
 import Users from "./Users";
 
 let mapStateToProps = (state) => {
+   
     return {
-        Users: state.UsersPage.Users
+        users: state.UsersPage.users
     }
 };
 
 let dispatchStateToProps = (dispatch) => {
-    debugger;
+    
     return {
         toggleFollow: (userId) => {
             dispatch(toggleFollowAC(userId));

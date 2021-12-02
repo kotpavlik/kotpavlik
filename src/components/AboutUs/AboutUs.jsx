@@ -3,6 +3,7 @@ import s from "./AboutUs.module.css";
 import MessengerContainer from "./Messenger/MessengerContainer";
 import PhGalery from "./PhGalery/PhGalery";
 import TextAU from "./Text/TextAU";
+import Maps from '../assets/aboutUsPhoto/maps.jpg'
 
 const AboutUs = (props) => {
 
@@ -12,7 +13,7 @@ const AboutUs = (props) => {
       <PhGalery/>
       <TextAU/>
       <MessengerContainer  store={props.store}/>
-      <div className={s.maps}><img src="aboutUsPhoto/maps.jpg" alt="" /></div>
+      <div className={s.maps}><img src={Maps} /></div>
     </div>
   );
 };

@@ -1,0 +1,21 @@
+.headNameUsers {
+    font-size: 25px;
+    min-height: 30px;
+    transition-duration: 0.1s;
+    user-select: none;
+}
+
+.headNameUsers:hover {
+    color: rgb(255, 0, 157);
+    transition-duration: 0.5s;
+}
+
+.headNameUsers:active {
+    transition-duration: 0.05s;
+    font-size: 23px;
+}
+
+.activeLink {
+    color: rgb(255, 0, 157) !important;
+    font-size: 30px;
+}
