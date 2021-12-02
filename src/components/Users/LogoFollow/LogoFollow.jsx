@@ -4,7 +4,7 @@ import userNullPhoto from '../../assets/logo/pngegg.png'
 
 
 const LogoFollow = (props) => {
-    debugger;
+   
 return (
 <div className={s.wraper}>
     <div className={s.photoContainer}> <img src={props.photos != null ? props.photos : userNullPhoto } alt="no photo" /></div>
