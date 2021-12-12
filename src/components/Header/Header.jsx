@@ -2,9 +2,9 @@ import React from 'react';
 import Logo from './Logo';
 import MenuHead from './MenuHead';
 import Basket from './Basket';
-import User from './User';
 import s from './Header.module.css'
 import UsersHead from './UsersHead';
+import UserAuthContainer from './UserAuthContainer';
 
 const Header = () => {
 return (
@@ -13,7 +13,7 @@ return (
 <Logo/>
 <UsersHead/>
 <Basket/>
-<User/>
+<UserAuthContainer/>
 </div>
 );
 }

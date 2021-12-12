@@ -1,13 +1,17 @@
+import React from 'react';
 import { connect } from "react-redux";
 import Messenger from "./Messenger";
 
+
+
 let mapStateToProps =(state)=> {
   return {
-    state:state.AboutUsPage
+    state:state.AboutUsPage,
+    
   }
 }
 
-const MessengerContainer = connect(mapStateToProps)(Messenger);
+export default connect(mapStateToProps, {})(Messenger);
  
 
-export default MessengerContainer;
+

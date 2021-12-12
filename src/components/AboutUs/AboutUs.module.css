@@ -20,22 +20,104 @@
     cursor: pointer;
 }
 
-.maps {
+.container {
+    display: flex;
+    justify-content: space-between;
     grid-area: maps;
     margin: 50px;
+    text-align: start;
+    border-top: 1px solid #666;
 }
 
-.maps>img {
+.avatar>img {
+    width: 100px;
+    height: auto;
+    border: 1px solid #666;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.wraper {
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: end;
+}
+
+.facebook {
+    padding: 3px 0;
+}
+
+.twitter {
+    padding: 3px 0;
+}
+
+.github {
+    padding: 3px 0;
+}
+
+.aboutMe {
+    margin: 10px;
+    padding: 3px;
+    font-size: 15px;
+    border: 1px solid #666;
+    border-radius: 50px;
+}
+
+.serchJob {
     width: 100%;
     height: auto;
-    display: block;
-    position: relative;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid #666;
-    border-radius: 25px;
-    overflow: hidden;
+    padding: 10px;
 }
 
-.maps>img:hover {}
+.jobwrapper {
+    border: 1px solid #666;
+    border-radius: 30%;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    padding: 3px;
+}
+
+.name {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    position: relative;
+    color: #000000;
+    /*задаём цвет ссылки*/
+    cursor: pointer;
+    line-height: 1.5;
+    /*задаём высоту строки*/
+    text-decoration: none;
+    /*убираем подчёркивание*/
+    transition-duration: 1s;
+}
+
+.name:hover {
+    transition-duration: 1s;
+    color: rgb(245, 143, 160);
+}
+
+.name:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0;
+    /*задаём длинну линии до наведения курсора*/
+    height: 1px;
+    /*задаём ширину линии*/
+    background-color: #000000;
+    /*задаём цвет линии*/
+    content: "";
+    transition: width 0.3s ease-out;
+    /*задаём время анимации*/
+}
+
+.name:hover:after,
+.name:focus:after {
+    width: 100%;
+    /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}

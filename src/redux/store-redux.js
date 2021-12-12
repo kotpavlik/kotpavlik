@@ -5,6 +5,7 @@ import ForWomenReducer from "./ForWomen-Reducer";
 import ForMenReducer from "./ForMen-Reducer";
 import AboutUsReducer from "./AboutUs-Reducer";
 import UsersReducer from "./Users-Reducer";
+import AuthReducer from "./Auth-Reducer";
 
 
 let reducers = combineReducers({ // комбинирует reducer и объекты которые мы поместили внурь reducer, ониотрабатывают и попадают в store
@@ -13,9 +14,12 @@ let reducers = combineReducers({ // комбинирует reducer и объек
     ForWomenPage: ForWomenReducer,
     ShopPage: ShopReducer,
     TestMessengerPage: TestMessengerReducer,
-    UsersPage: UsersReducer
+    UsersPage: UsersReducer,
+    Auth: AuthReducer
 });
 
 let store = createStore(reducers); // функция reducers объявленая выше является свойством store.
+
+window.store = store;
 
 export default store;

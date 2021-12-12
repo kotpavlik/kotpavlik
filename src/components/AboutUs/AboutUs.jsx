@@ -3,17 +3,57 @@ import s from "./AboutUs.module.css";
 import MessengerContainer from "./Messenger/MessengerContainer";
 import PhGalery from "./PhGalery/PhGalery";
 import TextAU from "./Text/TextAU";
-import Maps from '../assets/aboutUsPhoto/maps.jpg'
+import Preloader from "../Functional/Preloader";
+import Job from "../assets/logo/job.png";
+import Relax from "../assets/logo/relax.png"
 
 const AboutUs = (props) => {
-
+  if (!props.profile) {
+    return <Preloader />;
+  }
+  debugger;
   return (
     <div className={s.aboutUs}>
       <div className={s.headUs}>Pink Punk</div>
-      <PhGalery/>
-      <TextAU/>
-      <MessengerContainer  store={props.store}/>
-      <div className={s.maps}><img src={Maps} /></div>
+      <PhGalery />
+      <TextAU />
+      <MessengerContainer />
+      <div className={s.container}>
+        <div className={s.wraperLogo}>
+          <div className={s.avatar}>
+            <img src={props.profile.photos.large} />
+          </div>
+        </div>
+
+        <div>
+        <div className={s.name}>Имя: {props.profile.fullName}</div>
+          <div className={s.aboutMe}>статус: {props.profile.aboutMe}</div>
+          <div className={s.jobwrapper}> 
+          {props.profile.lookingForAJob ? <img className={s.serchJob} src={Job}/>:<img className={s.serchJob} src={Relax}/>}
+          </div>
+        </div>
+
+        <div className={s.wraper}>
+          <div className={s.facebook}>
+            Facebook:{" "}
+            <a href={`https://${props.profile.contacts.facebook}`}>
+              {props.profile.contacts.facebook}
+            </a>
+          </div>
+          <div className={s.twitter}>
+            Twitter:{" "}
+            <a href={`https://${props.profile.contacts.twitter}`}>
+              {props.profile.contacts.twitter}
+            </a>
+          </div>
+          <div className={s.github}>
+            Github:{" "}
+            <a href={`https://${props.profile.contacts.github}`}>
+              {props.profile.contacts.github}
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

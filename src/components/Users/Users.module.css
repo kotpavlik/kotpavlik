@@ -7,13 +7,37 @@
     display: grid;
     grid-template-rows: 50px 1fr;
     grid-template-columns: 25% 50% 25%;
-    grid-template-areas: "Users Users Users" "LogoFollow NameStatus Location";
+    grid-template-areas: "Pages Users Users" "LogoFollow NameStatus Location";
+}
+
+.grid0 {
+    grid-area: Pages;
+    display: flex;
+    padding: 10px;
+    font-size: 30px;
+    width: 1000px;
+    color: pink;
+    cursor: pointer;
+    user-select: none;
+}
+
+.count {
+    font-weight: bold;
+    color: black;
+}
+
+.countNoActive {
+    padding: 0px 10px 0px 10px;
+    font-size: 25px;
+    border: 1px solid #666;
+    border-radius: 10px;
+    margin: 0px 2px;
 }
 
 .grid1 {
     grid-area: Users;
-    padding: 10px 0px 10px 10px;
-    text-align: start;
+    padding: 10px;
+    text-align: end;
     font-weight: bold;
     font-size: 30px;
 }
