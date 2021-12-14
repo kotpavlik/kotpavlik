@@ -24,7 +24,7 @@ const Users = (props) => {
   let NameStatusArrow = props.users.map((u) => (
     <NameStatus name={u.name} status={u.status} key={u.id} />
   ));
-  let LocationArrow = props.users.map((u) => <Location key={u.id} />);
+  let LocationArrow = props.users.map((u) => <Location key={u.id} />); 
 
   return (
     <div>
