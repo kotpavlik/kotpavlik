@@ -1,8 +1,11 @@
+import { followAPI, usersAPI } from "../api/api";
+
 const TOOGLE_FOLLOW = 'TOOGLE_FOLLOW';
 const SET_USERS = 'SET_USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_USERS_TOTAL_COUNT = 'SET_USERS_TOTAL_COUNT';
 const TOOGLE_IS_FETCHING = 'TOOGLE_IS_FETCHING';
+const TOOGLE_IS_FOLLOWING_PROGRESS = 'TOOGLE_IS_FOLLOWING_PROGRESS';
 
 
 
@@ -11,7 +14,9 @@ let initialState = {
     pageSize: 25,
     totalUsersCount: 0,
     currentPage: 1,
-    isFetching: true
+    isFetching: true,
+    followingInProgress: []
+
 };
 const UsersReducer = (state = initialState, action) => {
 
@@ -49,6 +54,11 @@ const UsersReducer = (state = initialState, action) => {
                 ...state,
                 isFetching: action.isFetching
             }
+        case TOOGLE_IS_FOLLOWING_PROGRESS:
+            return {
+                ...state,
+                followingInProgress: action.isFetching ? [...state.followingInProgress, action.userId] : state.followingInProgress.filter(id => id != action.userId)
+            }
         default:
             return state;
     }
@@ -74,4 +84,45 @@ export const toogleIsFetching = (isFetching) => ({
     type: TOOGLE_IS_FETCHING,
     isFetching
 });
+export const toogleFollowingInProgress = (isFetching, userId) => ({
+    type: TOOGLE_IS_FOLLOWING_PROGRESS,
+    isFetching,
+    userId
+});
 export default UsersReducer;
+
+export const getUsers = (page, pageSize) => {
+    return (dispatch) => {
+        dispatch(toogleIsFetching(true));
+        dispatch(setCurrentPage(page))
+        usersAPI.getUsers(page, pageSize).then(data => {
+            dispatch(toogleIsFetching(false));
+            dispatch(setUsers(data.items));
+            dispatch(setUsersTotalCount(data.totalCount));
+        });
+    }
+}
+export const follow = (id) => {
+    return (dispatch) => {
+        dispatch(toogleFollowingInProgress(true, id));
+        followAPI.deleteUnfollow(id).then((data) => {
+            if (data.resultCode == 0) {
+                dispatch(toggleFollow(id));
+            }
+            dispatch(toogleFollowingInProgress(false, id));
+        });
+    }
+}
+export const unfollow = (id) => {
+    return (dispatch) => {
+        dispatch(toogleFollowingInProgress(true, id));
+        followAPI.postFollow(id).then((data) => {
+            if (data.resultCode == 0) {
+                dispatch(toggleFollow(id));
+            }
+            dispatch(toogleFollowingInProgress(false, id));
+        });
+    }
+}
+
+// Метод filter() создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую в передаваемой функции.

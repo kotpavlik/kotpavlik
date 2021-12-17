@@ -2,26 +2,20 @@ import  axios from 'axios';
 import React from 'react';
 import { connect } from "react-redux";
 import { useMatch } from 'react-router';
-import {setMessenger,setContacts,setLookingForAJob} from "../../redux/AboutUs-Reducer";
+import {getProfileThunk} from "../../redux/AboutUs-Reducer";
 import AboutUs from './AboutUs';
 
 
 class AboutUsContainer extends React.Component {
 componentDidMount() {
-  debugger
-  let userId = this.props.match.params.userId;
+  let userId = this.props.match.params.userId;  // это хук смотри на строку 39.Там всё поймёшь!
   if (!userId) {
     userId = 2;
   }
   else if (userId == "*") {
     userId = 2;
   }
-  debugger
-  axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + userId).then(response => {
-  this.props.setMessenger(response.data);
-  this.props.setContacts(response.data);
-  this.props.setLookingForAJob(response.data);
-});
+this.props.getProfileThunk(userId);
 }
 
   render() {
@@ -46,7 +40,7 @@ const AboutUsMatch = (props) => {
 	)
 }
 
-export default connect(mapStateToProps,{setMessenger,setContacts,setLookingForAJob})(AboutUsMatch);
+export default connect(mapStateToProps,{getProfileThunk})(AboutUsMatch);
  
 
 

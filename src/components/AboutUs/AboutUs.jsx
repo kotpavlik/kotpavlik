@@ -11,7 +11,7 @@ const AboutUs = (props) => {
   if (!props.profile) {
     return <Preloader />;
   }
-  debugger;
+  
   return (
     <div className={s.aboutUs}>
       <div className={s.headUs}>Pink Punk</div>

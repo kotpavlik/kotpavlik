@@ -29,6 +29,23 @@ export const followAPI = {
     }
 };
 
+export const userAuthAPI = {
+    getAuth() {
+        return instance.get(`auth/me`).then(response => {
+            return response
+        });
+    }
+};
+
+export const AboutUsAPI = {
+    getProfile(userId) {
+        return instance.get(`profile/` + userId).then(response => {
+            return response.data
+        });
+
+    }
+}
+
 
 // в этом файле мы создаём API подключение и выносим его из всевозможных компонент 
 // что бы небыло дублирования кода используем объект const instance = axios.create 

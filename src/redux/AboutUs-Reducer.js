@@ -1,3 +1,5 @@
+import { AboutUsAPI } from "../api/api";
+
 const ADD_POST = 'ADD_POST';
 const NEW_POST_CHANGE = 'NEW_POST_CHANGE';
 const SET_USER_MESSENGERS = 'SET_USER_MESSENGERS';
@@ -87,3 +89,14 @@ export const setContacts = (contscts) => ({
 
 
 export default AboutUsReducer;
+
+export const getProfileThunk = (userId) => {
+    return (dispatch) => {
+        AboutUsAPI.getProfile(userId).then(data => {
+            dispatch(setMessenger(data));
+            dispatch(setContacts(data));
+            dispatch(setLookingForAJob(data));
+        });
+
+    }
+}

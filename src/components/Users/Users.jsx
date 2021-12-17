@@ -5,6 +5,7 @@ import LogoFollow from "./LogoFollow/LogoFollow";
 import NameStatus from "./NameStatus/NameStatus";
 
 const Users = (props) => {
+  
   let PagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
   let pages = [];
@@ -15,6 +16,10 @@ const Users = (props) => {
   let LogoFollowArrow = props.users.map((u) => (
     <LogoFollow
       toggleFollow={props.toggleFollow}
+      followingInProgress={props.followingInProgress}
+      toogleFollowingInProgress={props.toogleFollowingInProgress}
+      follow={props.follow}
+      unfollow={props.unfollow}
       id={u.id}
       followed={u.followed}
       photos={u.photos.small}
@@ -39,6 +44,7 @@ const Users = (props) => {
                     props.currentPage === p && s.count
                   }`}
                   onClick={(e) => {
+                    debugger
                     props.onPageChange(p);
                   }}
                 >

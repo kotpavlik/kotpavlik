@@ -1,4 +1,5 @@
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import thunkMiddleware from "redux-thunk"
 import TestMessengerReducer from "./TestMessenger-Reducer";
 import ShopReducer from "./Shop-Reducer";
 import ForWomenReducer from "./ForWomen-Reducer";
@@ -18,7 +19,7 @@ let reducers = combineReducers({ // комбинирует reducer и объек
     Auth: AuthReducer
 });
 
-let store = createStore(reducers); // функция reducers объявленая выше является свойством store.
+let store = createStore(reducers, applyMiddleware(thunkMiddleware)); // функция reducers объявленая выше является свойством store.И добавили промежуточный слой applyMiddleware
 
 window.store = store;
 
