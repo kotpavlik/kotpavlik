@@ -18,10 +18,16 @@ class UsersComponent extends  React.Component {
        
         return <>
         {this.props.isFetching ? <Preloader/> : null}  
-        <Users totalUsersCount={this.props.totalUsersCount} pageSize ={this.props.pageSize}
-        users={this.props.users} toggleFollow={this.props.toggleFollow} currentPage={this.props.currentPage}
-        onPageChange={this.onPageChange} followingInProgress={this.props.followingInProgress} 
-        toogleFollowingInProgress={this.props.toogleFollowingInProgress} follow={this.props.follow} unfollow={this.props.unfollow}
+        <Users totalUsersCount={this.props.totalUsersCount} 
+        pageSize ={this.props.pageSize}
+        users={this.props.users}
+         toggleFollow={this.props.toggleFollow} 
+        currentPage={this.props.currentPage}
+        onPageChange={this.onPageChange} 
+        followingInProgress={this.props.followingInProgress} 
+        toogleFollowingInProgress={this.props.toogleFollowingInProgress} 
+        follow={this.props.follow} unfollow={this.props.unfollow}
+        isAuth={this.props.isAuth}
    />
    </>
     }};
@@ -34,7 +40,8 @@ let mapStateToProps = (state) => {
         totalUsersCount: state.UsersPage.totalUsersCount,
         currentPage:state.UsersPage.currentPage,
         isFetching:state.UsersPage.isFetching,
-        followingInProgress:state.UsersPage.followingInProgress
+        followingInProgress:state.UsersPage.followingInProgress,
+        isAuth:state.Auth.isAuth
     }
 };
 
@@ -48,3 +55,4 @@ export default connect (mapStateToProps,{toggleFollow,
 // },
 // так работает dispatch изнутри, но функция connect сама берёт эти объекты и создаёт callback 
 // если и ключ и значение одинаково в объекте то не обязательно писать name = name; - можно писать просто name (урок 58);
+// из редюсора аутентификации забираем isAuth:state.Auth.isAuth - булево значение которое тру если зарегины и фолс если не зареганы

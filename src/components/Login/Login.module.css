@@ -1,0 +1,16 @@
+.login {
+    font-size: 50px;
+    font-weight: bold;
+    border: 1px solid #666;
+    padding: 20px;
+    width: 500px;
+    height: 250px;
+    margin: 10% auto;
+    position: relative;
+    right: 40px;
+}
+
+.loginWraper {
+    display: flex;
+    justify-content: center;
+}

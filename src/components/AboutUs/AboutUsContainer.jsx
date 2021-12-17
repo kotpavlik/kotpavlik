@@ -21,14 +21,15 @@ this.props.getProfileThunk(userId);
   render() {
   
     return (
-      <AboutUs  profile={this.props.profile} /> 
+      <AboutUs  profile={this.props.profile} isAuth={this.props.isAuth} /> 
     )
   }
 }
 
 let mapStateToProps =(state)=> {
   return {
-    profile:state.AboutUsPage.profile
+    profile:state.AboutUsPage.profile,
+    isAuth:state.Auth.isAuth
   }
 }
 

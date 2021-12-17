@@ -3,6 +3,7 @@ import s from "./Users.module.css";
 import Location from "./Location/Location";
 import LogoFollow from "./LogoFollow/LogoFollow";
 import NameStatus from "./NameStatus/NameStatus";
+import { Navigate } from "react-router-dom";
 
 const Users = (props) => {
   
@@ -12,7 +13,7 @@ const Users = (props) => {
   for (let i = 1; i <= PagesCount; i++) {
     pages.push(i);
   }
-
+  if (!props.isAuth) return <Navigate to="/login"/>;
   let LogoFollowArrow = props.users.map((u) => (
     <LogoFollow
       toggleFollow={props.toggleFollow}
@@ -44,7 +45,6 @@ const Users = (props) => {
                     props.currentPage === p && s.count
                   }`}
                   onClick={(e) => {
-                    debugger
                     props.onPageChange(p);
                   }}
                 >
@@ -98,3 +98,6 @@ export default Users;
 // классовая компонента - это компонента у которой обязательно есть метод render, она обязательно должна отрисовать JSX
 // componentDidMount() - метод где нужно делать все side effects - логика которую мы прописываем вручную, методы
 // отвечающие за логику работы с state и store
+
+// Познакомились с ридеректом в React Router Dom 6 - это <Navigate to="/твояМамка" 
+// if (!props.isAuth) return <Navigate to="/login"/>; если булево значение не tru, то возвращаем редирект на страницу логин

@@ -6,11 +6,13 @@ import TextAU from "./Text/TextAU";
 import Preloader from "../Functional/Preloader";
 import Job from "../assets/logo/job.png";
 import Relax from "../assets/logo/relax.png"
+import { Navigate } from "react-router-dom";
 
 const AboutUs = (props) => {
   if (!props.profile) {
     return <Preloader />;
   }
+  if (!props.isAuth) return <Navigate to="/login"/>;
   
   return (
     <div className={s.aboutUs}>

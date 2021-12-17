@@ -10,6 +10,7 @@ import ForMenContainer from "./components/ForMen/ForMenContainer";
 import ForWomenContainer from "./components/ForWomen/ForWomenContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import AboutUsContainer from "./components/AboutUs/AboutUsContainer";
+import Login from "./components/Login/Login";
 
 
 function App(props) {  // это компанента.Мы используем только функциональные компоненты, которые принимают в себя props и возвращают разметку jsx.
@@ -27,9 +28,10 @@ function App(props) {  // это компанента.Мы используем 
           <Route path="/profile/:userId" element={<AboutUsContainer/>}/> 
           <Route path="/mess" element={<TestMessengerContiner />}/> 
           <Route path="/users" element = {<UsersContainer/>}/>
+          <Route path="/login" element = {<Login/>}/>
         </Routes>   
       </div>
-      <Footer />
+        <Footer /> 
     </div>
   );
 }

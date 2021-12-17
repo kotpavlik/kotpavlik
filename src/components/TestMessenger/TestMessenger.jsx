@@ -1,19 +1,18 @@
 import React from "react";
+import { Navigate } from "react-router-dom";
 import ButtonsDialogsContainer from "./Dialog/ButtonsDialogs/ButtonsDialogsContainer";
 import Dialog from "./Dialog/Dialog";
 import FriendDialog from "./FriendsDialog/FriendDialog";
 import s from "./TestMessenger.module.css";
 
 const TestMessenger = (props) => {
-
-
   let NewMessageArray = props.TestMessengerPage.MessangesArray.map((mess) => (
     <Dialog message={mess.message} key={mess.id} />
   ));
   let NewFriendsArray = props.TestMessengerPage.FriendsArray.map((name) => (
     <FriendDialog userName={name.userName} key={name.id} />
   ));
-
+  if (!props.isAuth) return <Navigate to="/login"/>;
   return (
     <div className={s.testMess}>
       <div className={s.header}>Диалоги</div>
