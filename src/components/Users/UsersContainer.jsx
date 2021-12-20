@@ -4,6 +4,9 @@ import { getUsers, toggleFollow,setUsersTotalCount,toogleFollowingInProgress,fol
 import Users from "./Users";
 import axios from "axios";
 import Preloader from "../Functional/Preloader";
+import { Navigate } from "react-router-dom";
+import { withAuthRedirect } from "../../hoc/withAuthRedirectComponent";
+import { compose } from "redux";
 
 class UsersComponent extends  React.Component {
     componentDidMount() {
@@ -15,7 +18,7 @@ class UsersComponent extends  React.Component {
     };
 
     render () { 
-       
+        
         return <>
         {this.props.isFetching ? <Preloader/> : null}  
         <Users totalUsersCount={this.props.totalUsersCount} 
@@ -40,16 +43,13 @@ let mapStateToProps = (state) => {
         totalUsersCount: state.UsersPage.totalUsersCount,
         currentPage:state.UsersPage.currentPage,
         isFetching:state.UsersPage.isFetching,
-        followingInProgress:state.UsersPage.followingInProgress,
-        isAuth:state.Auth.isAuth
+        followingInProgress:state.UsersPage.followingInProgress
     }
 };
 
-export default connect (mapStateToProps,{toggleFollow,
-    setUsersTotalCount,toogleFollowingInProgress,getUsers,follow,unfollow})
-(UsersComponent);
-
-
+export default compose (connect (mapStateToProps,{toggleFollow,
+    setUsersTotalCount,toogleFollowingInProgress,getUsers,follow,unfollow}),withAuthRedirect)(UsersComponent);
+// через compose можнго сделать вложеность HOC друг в друга (UsersComponent > withAuthRedirect > connect)    
 //   toogleIsFetching: (isFetching) => {
 //   dispatch(toogleIsFetchingAC(isFetching));
 // },

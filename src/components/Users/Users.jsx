@@ -13,7 +13,6 @@ const Users = (props) => {
   for (let i = 1; i <= PagesCount; i++) {
     pages.push(i);
   }
-  if (!props.isAuth) return <Navigate to="/login"/>;
   let LogoFollowArrow = props.users.map((u) => (
     <LogoFollow
       toggleFollow={props.toggleFollow}
@@ -31,16 +30,17 @@ const Users = (props) => {
     <NameStatus name={u.name} status={u.status} key={u.id} />
   ));
   let LocationArrow = props.users.map((u) => <Location key={u.id} />); 
-
+  
   return (
     <div>
       {
         <div className={s.wraper}>
           <div className={s.grid1}>Users</div>
           <div className={s.grid0}>
-            {pages.map((p) => {
+            {pages.map((p,i) => {
               return (
                 <div
+                key={i}
                   className={`${s.countNoActive} ${
                     props.currentPage === p && s.count
                   }`}

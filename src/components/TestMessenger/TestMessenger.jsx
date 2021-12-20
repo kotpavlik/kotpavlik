@@ -12,7 +12,6 @@ const TestMessenger = (props) => {
   let NewFriendsArray = props.TestMessengerPage.FriendsArray.map((name) => (
     <FriendDialog userName={name.userName} key={name.id} />
   ));
-  if (!props.isAuth) return <Navigate to="/login"/>;
   return (
     <div className={s.testMess}>
       <div className={s.header}>Диалоги</div>

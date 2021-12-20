@@ -12,7 +12,6 @@ const AboutUs = (props) => {
   if (!props.profile) {
     return <Preloader />;
   }
-  if (!props.isAuth) return <Navigate to="/login"/>;
   
   return (
     <div className={s.aboutUs}>
