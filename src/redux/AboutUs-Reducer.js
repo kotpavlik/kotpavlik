@@ -1,10 +1,11 @@
-import { AboutUsAPI } from "../api/api";
+import { AboutUsAPI, AboutUsProfileAPI } from "../api/api";
 
 const ADD_POST = 'ADD_POST';
 const NEW_POST_CHANGE = 'NEW_POST_CHANGE';
 const SET_USER_MESSENGERS = 'SET_USER_MESSENGERS';
 const SET_USER_CONTACTS = 'SET_USER_CONTACTS';
 const SET_LOOKING_JOB = 'SET_LOOKING_JOB';
+const SET_STATUS = 'SET_STATUS';
 
 let initialState = {
     PostsArray: [{
@@ -36,7 +37,8 @@ let initialState = {
     newPostText: '',
     profile: null,
     contacts: null,
-    lookingForAJob: null
+    lookingForAJob: null,
+    status: ""
 };
 
 const AboutUsReducer = (state = initialState, action) => {
@@ -61,6 +63,12 @@ const AboutUsReducer = (state = initialState, action) => {
             return {...state,
                 lookingForAJob: action.job
             }
+        case SET_STATUS:
+            debugger
+            return {...state,
+                status: action.status
+            }
+
 
         default:
             return state;
@@ -86,6 +94,10 @@ export const setContacts = (contscts) => ({
     type: SET_USER_CONTACTS,
     contscts
 });
+export const setUserStatus = (status) => ({
+    type: SET_STATUS,
+    status
+});
 
 
 export default AboutUsReducer;
@@ -97,6 +109,21 @@ export const getProfileThunk = (userId) => {
             dispatch(setContacts(data));
             dispatch(setLookingForAJob(data));
         });
-
+    }
+}
+export const getUserStatusThunk = (userId) => {
+    return (dispatch) => {
+        AboutUsProfileAPI.getStatus(userId).then(data => {
+            dispatch(setUserStatus(data));
+        });
+    }
+}
+export const updateUserStatusThunk = (status) => {
+    return (dispatch) => {
+        AboutUsProfileAPI.updateStatus(status).then(data => {
+            if (data.resultCode === 0) {
+                dispatch(setUserStatus(status));
+            }
+        });
     }
 }

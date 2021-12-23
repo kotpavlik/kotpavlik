@@ -5,14 +5,13 @@ import PhGalery from "./PhGalery/PhGalery";
 import TextAU from "./Text/TextAU";
 import Preloader from "../Functional/Preloader";
 import Job from "../assets/logo/job.png";
-import Relax from "../assets/logo/relax.png"
-import { Navigate } from "react-router-dom";
+import Relax from "../assets/logo/relax.png";
+import AboutStatus from "./AboutStatus.jsx/AboutStatus";
 
 const AboutUs = (props) => {
   if (!props.profile) {
     return <Preloader />;
   }
-  
   return (
     <div className={s.aboutUs}>
       <div className={s.headUs}>Pink Punk</div>
@@ -27,10 +26,17 @@ const AboutUs = (props) => {
         </div>
 
         <div>
-        <div className={s.name}>Имя: {props.profile.fullName}</div>
-          <div className={s.aboutMe}>статус: {props.profile.aboutMe}</div>
-          <div className={s.jobwrapper}> 
-          {props.profile.lookingForAJob ? <img className={s.serchJob} src={Job}/>:<img className={s.serchJob} src={Relax}/>}
+          <div className={s.name}>Имя: {props.profile.fullName}</div>
+          <AboutStatus
+            status={props.status}
+            updateUserStatusThunk={props.updateUserStatusThunk}
+          />
+          <div className={s.jobwrapper}>
+            {props.profile.lookingForAJob ? (
+              <img className={s.serchJob} src={Job} />
+            ) : (
+              <img className={s.serchJob} src={Relax} />
+            )}
           </div>
         </div>
 

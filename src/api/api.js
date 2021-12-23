@@ -39,12 +39,30 @@ export const userAuthAPI = {
 
 export const AboutUsAPI = {
     getProfile(userId) {
+        console.warn('Please use method AboutUsProfileAPI')
+        return AboutUsProfileAPI.getProfile(userId)
+    }
+};
+
+export const AboutUsProfileAPI = {
+    getProfile(userId) {
         return instance.get(`profile/` + userId).then(response => {
             return response.data
         });
-
+    },
+    getStatus(userId) {
+        return instance.get(`profile/status/` + userId).then(response => {
+            return response.data
+        });
+    },
+    updateStatus(status) {
+        return instance.put(`profile/status`, { status: status }).then(response => {
+            return response.data
+        });
     }
-}
+};
+
+
 
 
 // в этом файле мы создаём API подключение и выносим его из всевозможных компонент 
