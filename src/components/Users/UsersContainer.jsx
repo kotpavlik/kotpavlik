@@ -2,9 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { getUsers, toggleFollow,setUsersTotalCount,toogleFollowingInProgress,follow,unfollow} from "../../redux/Users-Reducer";
 import Users from "./Users";
-import axios from "axios";
 import Preloader from "../Functional/Preloader";
-import { Navigate } from "react-router-dom";
 import { withAuthRedirect } from "../../hoc/withAuthRedirectComponent";
 import { compose } from "redux";
 

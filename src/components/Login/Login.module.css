@@ -60,3 +60,12 @@
     font-size: 15px;
     text-shadow: 0px 0px 0px black;
 }
+
+.checkLabel {
+    font-size: 15px;
+    padding: 5px;
+}
+
+.rememberMe {
+    margin: 0px 0px 10px 0px;
+}

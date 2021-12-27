@@ -34,7 +34,18 @@ export const userAuthAPI = {
         return instance.get(`auth/me`).then(response => {
             return response
         });
+    },
+    loginApi(email, password, rememberMe = false) {
+        return instance.post(`auth/login`, { email, password, rememberMe }).then(response => {
+            return response
+        });
+    },
+    logout() {
+        return instance.delete(`auth/login`).then(response => {
+            return response
+        });
     }
+
 };
 
 export const AboutUsAPI = {
@@ -61,8 +72,6 @@ export const AboutUsProfileAPI = {
         });
     }
 };
-
-
 
 
 // в этом файле мы создаём API подключение и выносим его из всевозможных компонент 
