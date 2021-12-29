@@ -29,8 +29,8 @@ const Login = (props) => {
     confirmPassword: "",
   };
 
-  const onSubmit = (values, { setSubmitting }) => {
-    props.login(values.email, values.password, values.rememberMe);
+  const onSubmit = (values, { setSubmitting, setStatus }) => {
+    props.login(values.email, values.password, values.rememberMe,setStatus);
     setSubmitting(false);
   };
 
@@ -102,7 +102,9 @@ const Login = (props) => {
                   запомнить меня
                 </label>
               </div>
-              
+
+              <div className={s.errorAPItext}> {status} </div>
+
               <div>
                 <button
                   className={s.buttonLog}

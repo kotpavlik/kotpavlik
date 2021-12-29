@@ -46,7 +46,7 @@ let mapStateToProps = (state) => {
 };
 
 export default compose (connect (mapStateToProps,{toggleFollow,
-    setUsersTotalCount,toogleFollowingInProgress,getUsers,follow,unfollow}),withAuthRedirect)(UsersComponent);
+    setUsersTotalCount,toogleFollowingInProgress,getUsers,follow,unfollow}))(UsersComponent);
 // через compose можнго сделать вложеность HOC друг в друга (UsersComponent > withAuthRedirect > connect)    
 //   toogleIsFetching: (isFetching) => {
 //   dispatch(toogleIsFetchingAC(isFetching));

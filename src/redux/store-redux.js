@@ -7,6 +7,7 @@ import ForMenReducer from "./ForMen-Reducer";
 import AboutUsReducer from "./AboutUs-Reducer";
 import UsersReducer from "./Users-Reducer";
 import AuthReducer from "./Auth-Reducer";
+import AppReducer from "./App-Reducer";
 
 
 let reducers = combineReducers({ // комбинирует reducer и объекты которые мы поместили внурь reducer, ониотрабатывают и попадают в store
@@ -16,7 +17,8 @@ let reducers = combineReducers({ // комбинирует reducer и объек
     ShopPage: ShopReducer,
     TestMessengerPage: TestMessengerReducer,
     UsersPage: UsersReducer,
-    Auth: AuthReducer
+    Auth: AuthReducer,
+    AppR: AppReducer
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware)); // функция reducers объявленая выше является свойством store.И добавили промежуточный слой applyMiddleware

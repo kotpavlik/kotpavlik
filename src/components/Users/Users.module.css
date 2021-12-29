@@ -26,7 +26,7 @@
 }
 
 .grid0::-webkit-scrollbar {
-    display: none;
+    display: nonegit;
 }
 
 .count {

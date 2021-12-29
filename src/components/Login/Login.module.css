@@ -69,3 +69,9 @@
 .rememberMe {
     margin: 0px 0px 10px 0px;
 }
+
+.errorAPItext {
+    margin: 10px;
+    color: red;
+    font-size: 20px;
+}

@@ -1,16 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UserAuth from './UserAuth';
-import {getAuthAboutUs,logout} from '../../redux/Auth-Reducer';
+import {logout} from '../../redux/Auth-Reducer';
 
 
 
 class UserAuthComponent extends  React.Component {
     
-    componentDidMount() {
-       
-      this.props.getAuthAboutUs();
-    };
     render() {
         return <UserAuth {...this.props} />
     }
@@ -24,6 +20,4 @@ let mapStateToProps = (state) => {
 }
 }
 
-
-
-export default connect(mapStateToProps,{getAuthAboutUs,logout})(UserAuthComponent);
+export default connect(mapStateToProps,{logout})(UserAuthComponent);

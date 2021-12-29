@@ -34,13 +34,12 @@ let mapStateToProps =(state)=> {
   }
 }
 const AboutUsMatch = (props) => {
-  debugger
 	let match = useMatch("/profile/:userId/");
 	return (
-		<AuthRedirectComponent {...props} match={match} />
+		<AboutUsContainer {...props} match={match} />
 	)
 }
-let AuthRedirectComponent = withAuthRedirect(AboutUsContainer); 
+
 
 
 export default connect(mapStateToProps,{getProfileThunk,getUserStatusThunk,updateUserStatusThunk})(AboutUsMatch);
