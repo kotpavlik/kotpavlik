@@ -40,7 +40,7 @@ export const userAuthAPI = {
             return response
         });
     },
-    logout() {
+    logoutApi() {
         return instance.delete(`auth/login`).then(response => {
             return response
         });

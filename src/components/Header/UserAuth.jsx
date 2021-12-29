@@ -6,8 +6,9 @@ import { NavLink } from "react-router-dom";
 
     return (
         <div className={s.userAuth}>
-            {props.isAuth ? props.login :
-            <NavLink className={({isActive})=>isActive ? s.activeLink : ' '} to='/login'> пользователь </NavLink>
+            {props.isAuth 
+            ? <div className={s.wrapName}>{props.login} <button className={s.exit} onClick={props.logout}>Quit</button></div>
+            : <NavLink className={({isActive})=>isActive ? s.activeLink : ' '} to='/login'> пользователь </NavLink>
  }
         </div>
     );

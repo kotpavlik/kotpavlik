@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UserAuth from './UserAuth';
-import {getAuthAboutUs} from '../../redux/Auth-Reducer';
+import {getAuthAboutUs,logout} from '../../redux/Auth-Reducer';
 
 
 
@@ -20,11 +20,10 @@ let mapStateToProps = (state) => {
   
     return {
     isAuth:state.Auth.isAuth,
-        login:state.Auth.login
-
+        login:state.Auth.login,
 }
 }
 
 
 
-export default connect(mapStateToProps,{getAuthAboutUs})(UserAuthComponent);
+export default connect(mapStateToProps,{getAuthAboutUs,logout})(UserAuthComponent);

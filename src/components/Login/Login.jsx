@@ -3,7 +3,8 @@ import s from "./Login.module.css";
 import { Field, Form, Formik } from "formik";
 import * as yup from "yup";
 import { connect } from "react-redux";
-import {login} from '../../redux/Auth-Reducer';
+import { login } from "../../redux/Auth-Reducer";
+import { Navigate } from "react-router-dom";
 
 const Login = (props) => {
   const validationsSchema = yup.object().shape({
@@ -15,24 +16,28 @@ const Login = (props) => {
       .string()
       .typeError("должно быть строкой")
       .required("обязательно"),
-      confirmPassword: yup
+    confirmPassword: yup
       .string()
       .oneOf([yup.ref("password")], "пароли не совпадают")
-      .required("Обязательно")
+      .required("Обязательно"),
   });
 
   const initialValues = {
     email: "",
     password: "",
-    rememberMe:"",
-    confirmPassword: ""
+    rememberMe: "",
+    confirmPassword: "",
   };
 
   const onSubmit = (values, { setSubmitting }) => {
-      props.login(values.email, values.password, values.rememberMe);
-      setSubmitting(false);
+    props.login(values.email, values.password, values.rememberMe);
+    setSubmitting(false);
   };
-  debugger
+
+  if (props.isAuth) {
+    return <Navigate to={"/profile/*"}/>
+  }
+  
   return (
     <div className={s.loginWraper}>
       <div className={s.formStyles}>
@@ -42,7 +47,7 @@ const Login = (props) => {
           onSubmit={onSubmit}
           validationSchema={validationsSchema}
         >
-          {({ errors, touched, isValid, dirty }) => (
+          {({ errors, touched, isValid, dirty, status }) => (
             <Form>
               <div className={s.form}>
                 <div>
@@ -52,7 +57,7 @@ const Login = (props) => {
                     className={s.inputLogForm}
                     type={`email`}
                     name={`email`}
-                    placeholder={'email'}
+                    placeholder={"email"}
                   />
                   {touched.email && errors.email && (
                     <div className={s.error}>{errors.email}</div>
@@ -66,37 +71,39 @@ const Login = (props) => {
                     className={s.inputLogForm}
                     type={`password`}
                     name={`password`}
-                    placeholder={'Password'}
+                    placeholder={"Password"}
                   />
                   {touched.password && errors.password && (
                     <div className={s.error}>{errors.password}</div>
                   )}
                 </div>
-<div>
-                <label htmlFor={`confirmPassword`}>повторите пароль</label>
-                <br />
-                 <Field
-                  className={s.inputLogForm}
-                  type={`password`}
-                  name={`confirmPassword`}
-                  placeholder={`повторите пароль`}
-                />
+                <div>
+                  <label htmlFor={`confirmPassword`}>повторите пароль</label>
+                  <br />
+                  <Field
+                    className={s.inputLogForm}
+                    type={`password`}
+                    name={`confirmPassword`}
+                    placeholder={`повторите пароль`}
+                  />
+                </div>
+                {touched.confirmPassword && errors.confirmPassword && (
+                  <div className={s.error}>{errors.confirmPassword}</div>
+                )}
               </div>
-              {touched.confirmPassword && errors.confirmPassword && (
-                <div className={s.error}>{errors.confirmPassword}</div>
-              )}
-</div>
 
-                 <div className={s.rememberMe}>
-                 <Field
+              <div className={s.rememberMe}>
+                <Field
                   className={s.check}
                   type={`checkbox`}
                   name={`rememberMe`}
-                  />
-                  <label className={s.checkLabel} htmlFor={`rememberMe`}>запомнить меня</label>
-                 </div>
-
-                 <div>
+                />
+                <label className={s.checkLabel} htmlFor={`rememberMe`}>
+                  запомнить меня
+                </label>
+              </div>
+              
+              <div>
                 <button
                   className={s.buttonLog}
                   disabled={!isValid && !dirty}
@@ -113,4 +120,10 @@ const Login = (props) => {
   );
 };
 
-export default connect(null,{login})(Login);
+const mapStateToProps = (state) => {
+  return {
+    isAuth: state.Auth.isAuth
+  }
+}
+
+export default connect(mapStateToProps, { login })(Login);

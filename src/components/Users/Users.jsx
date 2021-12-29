@@ -3,7 +3,6 @@ import s from "./Users.module.css";
 import Location from "./Location/Location";
 import LogoFollow from "./LogoFollow/LogoFollow";
 import NameStatus from "./NameStatus/NameStatus";
-import { Navigate } from "react-router-dom";
 
 const Users = (props) => {
   

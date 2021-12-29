@@ -14,11 +14,19 @@
     grid-area: Pages;
     display: flex;
     padding: 10px;
+    margin: 0 10px;
     font-size: 30px;
-    width: 1000px;
+    width: 610px;
     color: pink;
     cursor: pointer;
     user-select: none;
+    overflow-y: hidden;
+    border: 0.5px solid #666;
+    border-radius: 20px;
+}
+
+.grid0::-webkit-scrollbar {
+    display: none;
 }
 
 .count {

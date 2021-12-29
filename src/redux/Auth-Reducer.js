@@ -13,8 +13,7 @@ const AuthReducer = (state = initialState, action) => {
     switch (action.type) { // пояснения по аналогичной работе с switch/case/break в чс TestMessenger-Reducer.js
         case SET_USER_DATA:
             return {...state,
-                ...action.payload,
-                isAuth: true
+                ...action.payload
             };
 
         default:

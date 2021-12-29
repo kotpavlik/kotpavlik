@@ -2,7 +2,6 @@ import React from "react";
 import s from "./LogoFollow.module.css";
 import userNullPhoto from "../../assets/logo/pngegg.png";
 import { NavLink } from "react-router-dom";
-import axios from "axios";
 
 const LogoFollow = (props) => {
   return (
