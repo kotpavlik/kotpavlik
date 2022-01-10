@@ -103,26 +103,26 @@ export const getUsers = (page, pageSize) => {
     }
 }
 export const follow = (id) => {
-    return (dispatch) => {
+    return async(dispatch) => {
         dispatch(toogleFollowingInProgress(true, id));
-        followAPI.deleteUnfollow(id).then((data) => {
-            if (data.resultCode == 0) {
-                dispatch(toggleFollow(id));
-            }
-            dispatch(toogleFollowingInProgress(false, id));
-        });
+        let data = await followAPI.deleteUnfollow(id);
+        if (data.resultCode == 0) {
+            dispatch(toggleFollow(id));
+        }
+        dispatch(toogleFollowingInProgress(false, id));
     }
 }
 export const unfollow = (id) => {
-    return (dispatch) => {
+    return async(dispatch) => {
         dispatch(toogleFollowingInProgress(true, id));
-        followAPI.postFollow(id).then((data) => {
-            if (data.resultCode == 0) {
-                dispatch(toggleFollow(id));
-            }
-            dispatch(toogleFollowingInProgress(false, id));
-        });
+        let data = await followAPI.postFollow(id);
+        if (data.resultCode == 0) {
+            dispatch(toggleFollow(id));
+        }
+        dispatch(toogleFollowingInProgress(false, id));
     }
 }
 
 // Метод filter() создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую в передаваемой функции.
+// поменяли then  на asinc await - ставим перед dispatch потому что эта функция должна запускаться асинхронно и с помощью 
+// await дожидаемся ответа и готово )

@@ -7,6 +7,7 @@ import Preloader from "../Functional/Preloader";
 import Job from "../assets/logo/job.png";
 import Relax from "../assets/logo/relax.png";
 import AboutStatus from "./AboutStatus.jsx/AboutStatus";
+import AboutStatusHooks from "./AboutStatus.jsx/AboutStatusHooks";
 
 const AboutUs = (props) => {
   if (!props.profile) {
@@ -27,7 +28,7 @@ const AboutUs = (props) => {
 
         <div>
           <div className={s.name}>Имя: {props.profile.fullName}</div>
-          <AboutStatus
+          <AboutStatusHooks
             status={props.status}
             updateUserStatusThunk={props.updateUserStatusThunk}
           />

@@ -33,7 +33,7 @@ export const initiolizeApp = () => {
     }
 }
 
-// Создали reducer App создали будевое значение initialized: false и потом если всё ок перезатираем на true.В каком случае
+// Создали reducer App создали булевое значение initialized: false и потом если всё ок перезатираем на true.В каком случае
 // export const initiolizeApp = () => {   - создаем санку
 //     return (dispatch) => { - диспатчим её
 //         let promise = dispatch(getAuthAboutUs()); - создаем промис на диспатч из другого редюссера 

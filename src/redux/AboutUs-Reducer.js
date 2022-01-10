@@ -64,7 +64,6 @@ const AboutUsReducer = (state = initialState, action) => {
                 lookingForAJob: action.job
             }
         case SET_STATUS:
-            debugger
             return {...state,
                 status: action.status
             }
@@ -103,27 +102,24 @@ export const setUserStatus = (status) => ({
 export default AboutUsReducer;
 
 export const getProfileThunk = (userId) => {
-    return (dispatch) => {
-        AboutUsAPI.getProfile(userId).then(data => {
-            dispatch(setMessenger(data));
-            dispatch(setContacts(data));
-            dispatch(setLookingForAJob(data));
-        });
+    return async(dispatch) => {
+        let data = await AboutUsAPI.getProfile(userId)
+        dispatch(setMessenger(data));
+        dispatch(setContacts(data));
+        dispatch(setLookingForAJob(data));
     }
 }
 export const getUserStatusThunk = (userId) => {
-    return (dispatch) => {
-        AboutUsProfileAPI.getStatus(userId).then(data => {
-            dispatch(setUserStatus(data));
-        });
+    return async(dispatch) => {
+        let data = await AboutUsProfileAPI.getStatus(userId)
+        dispatch(setUserStatus(data));
     }
 }
 export const updateUserStatusThunk = (status) => {
-    return (dispatch) => {
-        AboutUsProfileAPI.updateStatus(status).then(data => {
-            if (data.resultCode === 0) {
-                dispatch(setUserStatus(status));
-            }
-        });
+    return async(dispatch) => {
+        let data = await AboutUsProfileAPI.updateStatus(status)
+        if (data.resultCode === 0) {
+            dispatch(setUserStatus(status));
+        }
     }
 }
