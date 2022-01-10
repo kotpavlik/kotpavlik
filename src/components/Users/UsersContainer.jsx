@@ -4,7 +4,7 @@ import { getUsers, toggleFollow,setUsersTotalCount,toogleFollowingInProgress,fol
 import Users from "./Users";
 import Preloader from "../Functional/Preloader";
 import { compose } from "redux";
-import { getCurrentPage, getFollowingInProgress, getIsFetching, getPageSize, getTotalUsersCount, getUsersSelector } from "../../redux/users-selectors";
+import { getCurrentPage, getFollowingInProgress, getIsFetching, getPageSize, getportionsSize, getTotalUsersCount, getUsersSelector } from "../../redux/users-selectors";
 
 class UsersComponent extends  React.Component {
     componentDidMount() {
@@ -29,6 +29,7 @@ class UsersComponent extends  React.Component {
         toogleFollowingInProgress={this.props.toogleFollowingInProgress} 
         follow={this.props.follow} unfollow={this.props.unfollow}
         isAuth={this.props.isAuth}
+        portionsSize={this.props.portionsSize}
    />
    </>
     }};
@@ -41,7 +42,8 @@ let mapStateToProps = (state) => {
         totalUsersCount: getTotalUsersCount(state),
         currentPage: getCurrentPage(state),
         isFetching: getIsFetching(state),
-        followingInProgress: getFollowingInProgress(state)
+        followingInProgress: getFollowingInProgress(state),
+        portionsSize: getportionsSize(state)
     }
 };
 

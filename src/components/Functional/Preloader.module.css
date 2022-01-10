@@ -1,4 +1,12 @@
 .preloader {
-    width: 50px;
+    display: block;
+    position: fixed;
+    border: 0px solid #666;
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 3px;
+    bottom: 400px;
+    width: 70px;
+    height: 70px;
     margin: 0 46%;
 }

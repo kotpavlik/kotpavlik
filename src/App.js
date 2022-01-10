@@ -1,19 +1,23 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import s from "./App.module.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import New from "./components/New/New";
 import { Route, Routes } from "react-router";
-import TestMessengerContiner from "./components/TestMessenger/TestMessengerContainer";
-import ShopContainer from "./components/Shop/ShopContainer";
-import ForMenContainer from "./components/ForMen/ForMenContainer";
-import ForWomenContainer from "./components/ForWomen/ForWomenContainer";
-import UsersContainer from "./components/Users/UsersContainer";
-import AboutUsContainer from "./components/AboutUs/AboutUsContainer";
-import Login from "./components/Login/Login";
+// import TestMessengerContiner from "./components/TestMessenger/TestMessengerContainer"; 
+// воспользовались React.lazy и React.Suspense - они нужны что бы компоненты на которые не заходят не загружались просто так 
+// по этому приложение быстро стартует≤ а остальные компоненты подгружаются при взаимодействии с ними 
 import {initiolizeApp} from './redux/App-Reducer';
 import { connect } from "react-redux";
 import Preloader from "./components/Functional/Preloader";
+const TestMessengerContiner = lazy(() => import("./components/TestMessenger/TestMessengerContainer"));
+const ShopContainer = lazy(() => import("./components/Shop/ShopContainer"));
+const ForMenContainer = lazy(() => import("./components/ForMen/ForMenContainer"));
+const ForWomenContainer = lazy(() => import("./components/ForWomen/ForWomenContainer"));
+const UsersContainer = lazy(() => import("./components//Users/UsersContainer"));
+const AboutUsContainer = lazy(() => import("./components/AboutUs/AboutUsContainer"));
+const Login = lazy(() => import("./components/Login/Login"));
+;
 
 
 class App extends React.Component {  // это компанента.Мы используем только функциональные компоненты, которые принимают в себя props и возвращают разметку jsx.
@@ -28,6 +32,7 @@ render() {
   return (
     <div className={s.wraper}>
       <Header />
+      <Suspense fallback={<Preloader/>}>
       <div className={s.body_wraper}>
         <Routes>
           <Route path="/" element={<ShopContainer/>}/>
@@ -40,6 +45,7 @@ render() {
           <Route path="/login" element = {<Login/>}/>
         </Routes>   
       </div>
+      </Suspense>
         <Footer /> 
     </div>
   );

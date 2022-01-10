@@ -21,7 +21,9 @@ export const getIsFetching = (state) => {
 export const getFollowingInProgress = (state) => {
     return state.UsersPage.followingInProgress
 }
-
+export const getportionsSize = (state) => {
+    return state.UsersPage.portionsSize
+}
 
 // Установили пакет модулей npm install reselect. Из него пользуемся функцией createSelector. Это всё делаем для 
 // mapToState в UsersContainer.jsx туда запиливаем селекты эти в виде функций и пушка гонка такие селекторы можно захреначить во всех

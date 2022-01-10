@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./Users.module.css";
 import Location from "./Location/Location";
 import LogoFollow from "./LogoFollow/LogoFollow";
 import NameStatus from "./NameStatus/NameStatus";
 
 const Users = (props) => {
-  
   let PagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
   let pages = [];
   for (let i = 1; i <= PagesCount; i++) {
     pages.push(i);
   }
+
+  let portionCount = Math.ceil(PagesCount / props.portionsSize)
+  let [portionNumber, setPortionNumber] = useState(1);
+  let leftPortionPageNumber = (portionNumber - 1) * props.portionsSize + 1;
+  let rightPortionPageNumber = portionNumber * props.portionsSize;
+
   let LogoFollowArrow = props.users.map((u) => (
     <LogoFollow
       toggleFollow={props.toggleFollow}
@@ -28,18 +33,21 @@ const Users = (props) => {
   let NameStatusArrow = props.users.map((u) => (
     <NameStatus name={u.name} status={u.status} key={u.id} />
   ));
-  let LocationArrow = props.users.map((u) => <Location key={u.id} />); 
-  
+  let LocationArrow = props.users.map((u) => <Location key={u.id} />);
+
   return (
     <div>
       {
         <div className={s.wraper}>
           <div className={s.grid1}>Users</div>
           <div className={s.grid0}>
-            {pages.map((p,i) => {
+            <div className={s.grid01}>
+            {pages.filter((p) => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
+            .map((p, i) => {
+              
               return (
                 <div
-                key={i}
+                  key={i}
                   className={`${s.countNoActive} ${
                     props.currentPage === p && s.count
                   }`}
@@ -51,7 +59,15 @@ const Users = (props) => {
                 </div>
               );
             })}
+            </div>
+            <div className={s.buttonContainer}>
+              {portionNumber > 1 &&
+            <button onClick={()=> {setPortionNumber(portionNumber - 1)}} className={s.tapToAhead}>назад</button>}
+          {portionCount > portionNumber &&
+            <button onClick={()=> {setPortionNumber(portionNumber + 1)}} className={s.tapToAhead}>вперед</button>}
+            </div>
           </div>
+    
           <div className={s.grid2}>{LogoFollowArrow}</div>
           <div className={s.grid3}>{NameStatusArrow}</div>
           <div className={s.grid4}>{LocationArrow}</div>
@@ -98,5 +114,5 @@ export default Users;
 // componentDidMount() - метод где нужно делать все side effects - логика которую мы прописываем вручную, методы
 // отвечающие за логику работы с state и store
 
-// Познакомились с ридеректом в React Router Dom 6 - это <Navigate to="/твояМамка" 
+// Познакомились с ридеректом в React Router Dom 6 - это <Navigate to="/твояМамка"
 // if (!props.isAuth) return <Navigate to="/login"/>; если булево значение не tru, то возвращаем редирект на страницу логин
