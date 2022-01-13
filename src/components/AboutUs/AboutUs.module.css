@@ -113,3 +113,37 @@
     width: 100%;
     /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
 }
+
+.inp {
+    display: none;
+}
+
+label {
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
+    transition-duration: 0.5s;
+    margin: 5px 10px;
+    padding: 3px;
+    border: 1px solid #666;
+    background-color: black;
+    color: pink;
+}
+
+label:hover {
+    transition-duration: 0.5s;
+    color: white;
+    background-color: black;
+}
+
+label:active {
+    transition-duration: 0.5s;
+    box-shadow: 0px 0px 8px 2px #666;
+    font-size: 16px;
+    color: pink;
+    background-color: #fff;
+}

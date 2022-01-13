@@ -6,6 +6,7 @@ const SET_USER_MESSENGERS = 'SET_USER_MESSENGERS';
 const SET_USER_CONTACTS = 'SET_USER_CONTACTS';
 const SET_LOOKING_JOB = 'SET_LOOKING_JOB';
 const SET_STATUS = 'SET_STATUS';
+const SET_PHOTOS = 'SET_PHOTOS';
 
 let initialState = {
     PostsArray: [{
@@ -67,6 +68,10 @@ const AboutUsReducer = (state = initialState, action) => {
             return {...state,
                 status: action.status
             }
+        case SET_PHOTOS:
+            return {...state,
+                profile: {...state.profile, photos: action.photos }
+            }
 
 
         default:
@@ -97,6 +102,10 @@ export const setUserStatus = (status) => ({
     type: SET_STATUS,
     status
 });
+export const savePhotoSuccess = (photos) => ({
+    type: SET_PHOTOS,
+    photos
+});
 
 
 export default AboutUsReducer;
@@ -121,5 +130,11 @@ export const updateUserStatusThunk = (status) => {
         if (data.resultCode === 0) {
             dispatch(setUserStatus(status));
         }
+    }
+}
+export const savePhotoThunk = (file) => async(dispatch) => {
+    let data = await AboutUsProfileAPI.savePhoto(file)
+    if (data.resultCode === 0) {
+        dispatch(savePhotoSuccess(data.data.photos));
     }
 }

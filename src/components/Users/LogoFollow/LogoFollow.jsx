@@ -11,10 +11,11 @@ const LogoFollow = (props) => {
           className={({ isActive }) => (isActive ? s.activeLink : " ")}
           to={"/profile/" + props.id}
         >
-          <img
+          <img className={s.logoUsers}
             src={props.photos != null ? props.photos : userNullPhoto}
             alt="no photo"
           />
+          
         </NavLink>
       </div>
 

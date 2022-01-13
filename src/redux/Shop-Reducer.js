@@ -55,4 +55,5 @@ let initialState = {
 const ShopReducer = (state = initialState, action) => {
     return state;
 }
+
 export default ShopReducer;
