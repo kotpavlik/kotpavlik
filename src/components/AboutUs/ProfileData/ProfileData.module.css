@@ -1,0 +1,40 @@
+.wraper {
+    border: 1px solid #666;
+    padding: 10px;
+    margin: 20px 0px;
+}
+
+.edit {
+    width: 70px;
+    font-size: 16px;
+    padding: 0px 10px 0px 10px;
+    height: 30px;
+    border-radius: 25px;
+    transition-duration: 0.5s;
+    margin: 10px 0px 0px 0px;
+    border: 1px solid #666;
+    background-color: black;
+    color: pink;
+}
+
+.edit:hover {
+    transition-duration: 0.5s;
+    color: white;
+    background-color: black;
+}
+
+.edit:active {
+    transition-duration: 0.5s;
+    box-shadow: 0px 0px 8px 2px #666;
+    font-size: 15px;
+    color: pink;
+    background-color: #fff;
+}
+
+.inputData {
+    margin: 5px;
+}
+
+.dataSites {
+    margin: 3px 10px;
+}

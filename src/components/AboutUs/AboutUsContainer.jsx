@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { useMatch } from 'react-router';
 import { withAuthRedirect } from '../../hoc/withAuthRedirectComponent';
-import {getProfileThunk,getUserStatusThunk,updateUserStatusThunk,savePhotoThunk} from "../../redux/AboutUs-Reducer";
+import {getProfileThunk,getUserStatusThunk,updateUserStatusThunk,savePhotoThunk,saveProfileDataThunk} from "../../redux/AboutUs-Reducer";
 import AboutUs from './AboutUs';
 
 
@@ -34,7 +34,9 @@ componentDidUpdate(prevProps, prevState, snapshot) { // смотрит како�
       <AboutUs isOwner={this.props.match.params.userId == "*"} 
       savePhotoThunk={this.props.savePhotoThunk}
       profile={this.props.profile} isAuth={this.props.isAuth}
-      status={this.props.status} updateUserStatusThunk={this.props.updateUserStatusThunk}/> 
+      status={this.props.status} updateUserStatusThunk={this.props.updateUserStatusThunk}
+      saveProfileDataThunk={this.props.saveProfileDataThunk}
+      /> 
     )
   }
 }
@@ -42,7 +44,8 @@ componentDidUpdate(prevProps, prevState, snapshot) { // смотрит како�
 let mapStateToProps =(state)=> {
   return {
     profile:state.AboutUsPage.profile,
-    status:state.AboutUsPage.status
+    status:state.AboutUsPage.status,
+
   }
 }
 const AboutUsMatch = (props) => {
@@ -54,7 +57,7 @@ const AboutUsMatch = (props) => {
 
 
 
-export default connect(mapStateToProps,{getProfileThunk,getUserStatusThunk,updateUserStatusThunk,savePhotoThunk})(AboutUsMatch);
+export default connect(mapStateToProps,{getProfileThunk,getUserStatusThunk,updateUserStatusThunk,savePhotoThunk,saveProfileDataThunk})(AboutUsMatch);
 
  
 

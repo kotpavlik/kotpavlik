@@ -7,6 +7,8 @@ const SET_USER_CONTACTS = 'SET_USER_CONTACTS';
 const SET_LOOKING_JOB = 'SET_LOOKING_JOB';
 const SET_STATUS = 'SET_STATUS';
 const SET_PHOTOS = 'SET_PHOTOS';
+const SET_PROFILE_DATA = 'SET_PROFILE_DATA';
+const SET_PROFILE = 'SET_PROFILE';
 
 let initialState = {
     PostsArray: [{
@@ -72,7 +74,14 @@ const AboutUsReducer = (state = initialState, action) => {
             return {...state,
                 profile: {...state.profile, photos: action.photos }
             }
+        case SET_PROFILE_DATA:
 
+            return {...state,
+                profile: {...
+                    state.profile,
+                    profile: action.profile
+                }
+            }
 
         default:
             return state;
@@ -106,6 +115,22 @@ export const savePhotoSuccess = (photos) => ({
     type: SET_PHOTOS,
     photos
 });
+export const setSaveProfile = (SaveProfile) => ({
+    type: SET_PROFILE,
+    SaveProfile
+});
+export const saveProfileDataSuccess = (fullName, lookingForAJob, lookingForAJobDiscription, aboutMe, contacts) => ({
+    type: SET_PROFILE_DATA,
+    profile: {
+        fullName,
+        lookingForAJob,
+        lookingForAJobDiscription,
+        aboutMe,
+        contacts
+    }
+});
+
+
 
 
 export default AboutUsReducer;
@@ -138,3 +163,13 @@ export const savePhotoThunk = (file) => async(dispatch) => {
         dispatch(savePhotoSuccess(data.data.photos));
     }
 }
+export const saveProfileDataThunk = (fullName, lookingForAJob, lookingForAJobDescription, aboutMe, contacts) =>
+    async(dispatch, getState) => {
+        const userId = getState().Auth.id;
+        const data = await AboutUsProfileAPI.saveProfileDataApi(fullName, lookingForAJob, lookingForAJobDescription, aboutMe, contacts);
+        if (data.resultCode === 0) {
+            dispatch(getProfileThunk(userId))
+                // let { fullName, lookingForAJob, lookingForAJobDescription, aboutMe, contacts } = data.data;
+                // dispatch(saveProfileDataSuccess(fullName, lookingForAJob, lookingForAJobDescription, aboutMe, contacts))
+        }
+    }

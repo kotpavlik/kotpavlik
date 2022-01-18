@@ -4,11 +4,11 @@ import s from "./AboutStatus.module.css";
 
 const AboutStatusHooks = React.memo(props => {
 
-  let [editMode,setEditMode] = useState(true);
-  let [status,setStatus] = useState(props.status);
+  let [editMode,setEditMode] = useState(true); // хук useState создаёт объект с значением и функцию которая может его изменять 
+  let [status,setStatus] = useState(props.status); // такой же хук
 
-  useEffect( () => {
-    setStatus(props.status);
+  useEffect( () => { // насколько я помню useEffect работает как componentDidUpdate и следит только за статусам и перересовывает 
+    setStatus(props.status); // его когда он меняется 
   },[props.status]);
 
   const activateEditMode = () => {

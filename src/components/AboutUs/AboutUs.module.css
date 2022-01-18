@@ -27,6 +27,7 @@
     margin: 50px;
     text-align: start;
     border-top: 1px solid #666;
+    align-items: flex-start;
 }
 
 .avatar>img {
@@ -118,7 +119,7 @@
     display: none;
 }
 
-label {
+.label {
     display: block;
     position: relative;
     text-align: center;
@@ -134,13 +135,13 @@ label {
     color: pink;
 }
 
-label:hover {
+.label:hover {
     transition-duration: 0.5s;
     color: white;
     background-color: black;
 }
 
-label:active {
+.label:active {
     transition-duration: 0.5s;
     box-shadow: 0px 0px 8px 2px #666;
     font-size: 16px;

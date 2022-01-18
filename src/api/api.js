@@ -82,7 +82,13 @@ export const AboutUsProfileAPI = {
         }).then(response => {
             return response.data
         });
-    }
+    },
+    saveProfileDataApi(fullName, lookingForAJob, lookingForAJobDescription, aboutMe, contacts) {
+
+        return instance.put(`profile`, { fullName, lookingForAJob, lookingForAJobDescription, aboutMe, contacts }).then(response => {
+            return response.data
+        });
+    },
 };
 
 
