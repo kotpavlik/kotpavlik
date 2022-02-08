@@ -84,6 +84,7 @@ const AboutUs = React.memo(props => { // React.memo сначала провер�
         onSubmit={onSubmit}
         />}
       </div>
+      
     </div>
   );
 });

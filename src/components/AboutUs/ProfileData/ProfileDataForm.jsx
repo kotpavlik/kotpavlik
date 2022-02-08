@@ -5,6 +5,8 @@ import * as yup from "yup";
 
 
 
+
+
 const ProfileDataForm = React.memo(props => {
 
 
@@ -136,7 +138,7 @@ const ProfileDataForm = React.memo(props => {
               })
              }
             </div>
-
+             
             <div className={s.wrapButton}>
               <button
                 className={s.edit}
@@ -150,6 +152,11 @@ const ProfileDataForm = React.memo(props => {
         )}
       </Formik>
     </div>
+    
   );
 });
 export default ProfileDataForm;
+
+
+
+

@@ -2,6 +2,7 @@ import React from "react";
 import s from "./LogoFollow.module.css";
 import userNullPhoto from "../../assets/logo/pngegg.png";
 import { NavLink } from "react-router-dom";
+import AvatarLottie from "../../AnimationLottie/Avatar";
 
 const LogoFollow = (props) => {
   return (
@@ -15,10 +16,10 @@ const LogoFollow = (props) => {
             src={props.photos != null ? props.photos : userNullPhoto}
             alt="no photo"
           />
-          
+
         </NavLink>
       </div>
-
+      
       <div className={s.buttonContainer}>
         {props.followed ? (
           <button

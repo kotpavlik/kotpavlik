@@ -7,6 +7,7 @@ import { login } from "../../redux/Auth-Reducer";
 import { Navigate } from "react-router-dom";
 
 const Login = (props) => {
+
   const validationsSchema = yup.object().shape({
     email: yup
       .string()
@@ -20,16 +21,21 @@ const Login = (props) => {
       .string()
       .oneOf([yup.ref("password")], "пароли не совпадают")
       .required("Обязательно"),
+      captcha: yup
+      .string()
+      .typeError("должно быть строкой")
+      
   });
   const initialValues = {
     email: "",
     password: "",
     rememberMe: "",
     confirmPassword: "",
+    captcha:""
   };
 
   const onSubmit = (values, { setSubmitting, setStatus }) => {
-    props.login(values.email, values.password, values.rememberMe,setStatus);
+    props.login(values.email, values.password, values.rememberMe,values.captcha,setStatus);
     setSubmitting(false);
   };
 
@@ -103,7 +109,23 @@ const Login = (props) => {
               </div>
 
               <div className={s.errorAPItext}> {status} </div>
-
+                <div className={s.captcha}> 
+                {props.CaptchaUrl && <img src={props.CaptchaUrl}/>}
+                {props.CaptchaUrl && 
+                <div>
+                  <label htmlFor={`captcha`}>введи цифры и буквы</label>
+                  <br />
+                  <Field
+                    className={s.inputLogForm}
+                    type={`input`}
+                    name={`captcha`}
+                    placeholder={"captcha"}
+                  />
+                  {touched.email && errors.email && (
+                    <div className={s.error}>{errors.email}</div>
+                  )}
+                </div>}
+                </div>
               <div>
                 <button
                   className={s.buttonLog}
@@ -123,7 +145,9 @@ const Login = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isAuth: state.Auth.isAuth
+    isAuth: state.Auth.isAuth,
+    CaptchaUrl:state.Auth.CaptchaUrl
+
   }
 }
 

@@ -3,6 +3,7 @@ import s from "./ProfileData.module.css"
 
 const ProfileData = React.memo(props => {
 
+
   return (
       
     <div className={s.wraper}>
@@ -16,7 +17,10 @@ const ProfileData = React.memo(props => {
       //key -  это и будет ключ contactTitle по которому мы мапимся, а contactValue={props.profile.contacts[key]} - а значение мы берем
       // у каждого ключа в масиве и сопоставляем их 
       )} </div>
-     {props.isOwner &&  <div className={s.wrapButton}><button className={s.edit} onClick={props.activetatedEditModeProfile}>изменить</button></div>}
+     {props.isOwner &&  
+     <div className={s.wrapButton}>
+        <button className={s.edit} onClick={props.activetatedEditModeProfile}>изменить</button> 
+        </div>}
     </div>
   );
 });
