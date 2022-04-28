@@ -36,7 +36,12 @@ export const userAuthAPI = {
         });
     },
     loginApi(email, password, rememberMe = false, captcha) {
-        return instance.post(`auth/login`, { email, password, rememberMe, captcha }).then(response => {
+        return instance.post(`auth/login`, {
+            email,
+            password,
+            rememberMe,
+            captcha
+        }).then(response => {
             return response
         });
     },
@@ -74,7 +79,9 @@ export const AboutUsProfileAPI = {
         });
     },
     updateStatus(status) {
-        return instance.put(`profile/status`, { status: status }).then(response => {
+        return instance.put(`profile/status`, {
+            status: status
+        }).then(response => {
             return response.data
         });
     },
@@ -92,7 +99,13 @@ export const AboutUsProfileAPI = {
     },
     saveProfileDataApi(fullName, lookingForAJob, lookingForAJobDescription, aboutMe, contacts) {
 
-        return instance.put(`profile`, { fullName, lookingForAJob, lookingForAJobDescription, aboutMe, contacts }).then(response => {
+        return instance.put(`profile`, {
+            fullName,
+            lookingForAJob,
+            lookingForAJobDescription,
+            aboutMe,
+            contacts
+        }).then(response => {
             return response.data
         });
     },

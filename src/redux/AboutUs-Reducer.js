@@ -1,4 +1,7 @@
-import { AboutUsAPI, AboutUsProfileAPI } from "../api/api";
+import {
+    AboutUsAPI,
+    AboutUsProfileAPI
+} from "../api/api";
 
 const ADD_POST = 'ADD_POST';
 const NEW_POST_CHANGE = 'NEW_POST_CHANGE';
@@ -9,6 +12,7 @@ const SET_STATUS = 'SET_STATUS';
 const SET_PHOTOS = 'SET_PHOTOS';
 const SET_PROFILE_DATA = 'SET_PROFILE_DATA';
 const SET_PROFILE = 'SET_PROFILE';
+
 
 let initialState = {
     PostsArray: [{
@@ -48,36 +52,54 @@ const AboutUsReducer = (state = initialState, action) => {
 
     switch (action.type) { // пояснения по аналогичной работе с switch/case/break в чс TestMessenger-Reducer.js
         case ADD_POST:
-            return {...state,
-                PostsArray: [...state.PostsArray, { id: 6, post: state.newPostText, like: 0 }], // так пушим
+            return {
+                ...state,
+                PostsArray: [...state.PostsArray, {
+                    id: 6,
+                    post: state.newPostText,
+                    like: 0
+                }], // так пушим
                 newPostText: '' // зануляем
             };
         case NEW_POST_CHANGE:
-            return {...state, newPostText: action.NewText }; // копируем state и говорим что в newPostText будет текст из action.NewText
+            return {
+                ...state,
+                newPostText: action.NewText
+            }; // копируем state и говорим что в newPostText будет текст из action.NewText
         case SET_USER_MESSENGERS:
-            return {...state,
+            return {
+                ...state,
                 profile: action.profile
             };
         case SET_USER_CONTACTS:
-            return {...state,
+            return {
+                ...state,
                 contacts: action.contacts
             }
         case SET_LOOKING_JOB:
-            return {...state,
+            return {
+                ...state,
                 lookingForAJob: action.job
             }
         case SET_STATUS:
-            return {...state,
+            return {
+                ...state,
                 status: action.status
             }
         case SET_PHOTOS:
-            return {...state,
-                profile: {...state.profile, photos: action.photos }
+            return {
+                ...state,
+                profile: {
+                    ...state.profile,
+                    photos: action.photos
+                }
             }
         case SET_PROFILE_DATA:
 
-            return {...state,
-                profile: {...
+            return {
+                ...state,
+                profile: {
+                    ...
                     state.profile,
                     profile: action.profile
                 }
@@ -87,6 +109,7 @@ const AboutUsReducer = (state = initialState, action) => {
             return state;
     }
 }
+
 export const addPostNewAction = () => ({
     type: ADD_POST
 });

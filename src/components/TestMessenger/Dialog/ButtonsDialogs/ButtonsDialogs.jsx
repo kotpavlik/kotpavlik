@@ -2,7 +2,7 @@ import React from "react";
 import s from "./ButtonsDialogs.module.css";
 
 const ButtonsDialogs = (props) => {
-debugger;
+
 
 
 let NewMessageText = props.NewMessageText;

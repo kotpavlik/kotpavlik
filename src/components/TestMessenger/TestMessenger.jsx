@@ -6,6 +6,7 @@ import FriendDialog from "./FriendsDialog/FriendDialog";
 import s from "./TestMessenger.module.css";
 
 const TestMessenger = (props) => {
+  
   let NewMessageArray = props.TestMessengerPage.MessangesArray.map((mess) => (
     <Dialog message={mess.message} key={mess.id} />
   ));
