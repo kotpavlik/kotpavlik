@@ -22,7 +22,7 @@
 
 
 ## My Skill Set  
-<table><tr><td valign="top" width="33%">
+<table><tr><td valign="top" width="50%">
 
 
 
@@ -47,13 +47,8 @@
 <a href="https://www.jestjs.io/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/jest.svg" alt="Jest" height="50" /></a>  
 <a href="https://about.gitlab.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/gitlab.svg" alt="GitLab" height="50" /></a>  
 </div>  
-
-<div align="center">
-<img src="https://media0.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" align="center" height="" width="250" />
-</div>  
-
-
-</td><td valign="top" width="33%">
+ 
+</td><td valign="top" width="50%">
 
 
 
@@ -69,14 +64,12 @@
 <a href="https://nextjs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/nextjs.png" alt="NextJS" height="50" /></a>  
 </div>
 
-</td><td valign="top" width="33%">
-
-
-
 </td></tr></table>  
 
 <br/>  
-
+  <div align="center">
+<img src="https://camo.githubusercontent.com/efe028a1acecb148345817f09b7aa02ccb73f1335baf7ece530f6be85d4bfa1e/68747470733a2f2f692e70696e696d672e636f6d2f6f726967696e616c732f32662f66342f32382f32666634323830303666336164653566313062656163363933373230363261622e676966" align="center" height="" width="500" />
+</div>  
 
 ## Connect with me  
 <div align="center">
@@ -102,6 +95,8 @@
 <img src=https://img.shields.io/badge/dev.to-%2308090A.svg?&style=for-the-badge&logo=dev.to&logoColor=white alt=devto style="margin-bottom: 5px;" />
 </a>  
 </div>  
+
+
   
 
 <br/>  
