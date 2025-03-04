@@ -1,5 +1,5 @@
 <div align="center">
-<img src="[https://camo.githubusercontent.com/cae12fddd9d6982901d82580bdf321d81fb299141098ca1c2d4891870827bf17](https://media.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif?cid=ecf05e47pl0xbdaolc9a1ybuy8tq44jfo5d78of7p7lwt3zr&ep=v1_gifs_related&rid=giphy.gif&ct=g)" align="center" height="" width="400" />
+<img src="https://camo.githubusercontent.com/cae12fddd9d6982901d82580bdf321d81fb299141098ca1c2d4891870827bf17" align="center" height="" width="400" />
 </div>  
   
 
