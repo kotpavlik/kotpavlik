@@ -103,10 +103,7 @@ If things goes well, this section should automatically be replaced by a list of 
 
 
 
-### Good morning.   
-<div align="center"><img src="https://spotify-github-profile.vercel.app/api/view?uid=31lot67lmepuzaguveya34gr742u&cover_image=true&theme=default&show_offline=false&background_color=000000&interchange=false&bar_color=94201b&bar_color_cover=false" /></div>  
-
-<br/>  
+### Nihao
 
 <div align="center">
 <img src="https://komarev.com/ghpvc/?username=rishavanand&&style=flat-square" align="center" />
