@@ -1,25 +1,10 @@
 <div align="center">
-<img src="https://camo.githubusercontent.com/cae12fddd9d6982901d82580bdf321d81fb299141098ca1c2d4891870827bf17/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313336302f302a37513379765349765f7430696f4a2d5a2e676966" align="center" height="" width="400" />
+<img src="[https://camo.githubusercontent.com/cae12fddd9d6982901d82580bdf321d81fb299141098ca1c2d4891870827bf17](https://media.giphy.com/media/MdA16VIoXKKxNE8Stk/giphy.gif?cid=ecf05e47pl0xbdaolc9a1ybuy8tq44jfo5d78of7p7lwt3zr&ep=v1_gifs_related&rid=giphy.gif&ct=g)" align="center" height="" width="400" />
 </div>  
   
 
-### <div align="center">I'm Igor , a frontend developer 👨‍💻 working since 2020 🚀</div>  
-  
-
-- 🔭 I’m currently working on [Trainee Project](https://github.com/Anton1919/front-team)  
-  
-
-- 🌱 I’m currently learning React Native and Node.js  
-  
-
-- ❓ Ask me about soft skills, this is my best side   
-  
-
-- ⚡ Fun fact: I use tabs over spaces  
-  
-
-<br/>  
-
+### <div align="center">I'm Igor , a fullstack developer 👨‍💻 working since 2020 🚀</div>  
+   
 
 ## My Skill Set  
 <table><tr><td valign="top" width="50%">
